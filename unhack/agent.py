@@ -20,21 +20,21 @@ mw_chain = LLMChain(
 mw_learnings = """
 Whenever I say "Microworld Update:" followed by a description of the aesthetic, modify the following message
 with the hexadecimal color value and brightness value that may best represent the mood and vibes of the specification.
-Include specification string itself instead of <specification> into the title field.
+Include specification string itself instead of <specification> into the title field. The output must be valid JSON.
 
 {
   "propose": {
     "msg": {
       "propose": {
         "title": "<specification>",
-        "description": "'brightness': "<brightness-value>", "color": "<hexadecimal-color-value>""}",
+        "description": "'brightness': '<brightness-value>', 'color': '<hexadecimal-color-value>'",
         "msgs": []
       }
     }
   }
 }
 
-Please make sure to only edit brightness and color and keep the message structure in tact.
+Please make sure to only edit brightness, color, and title and keep the message structure in tact.
 
 For example:
 
@@ -44,7 +44,7 @@ Input: shadowy supercoder
     "msg": {
       "propose": {
         "title": "shadowy supercoder",
-        "description": "brightness 40', color: '#333333'}",
+        "description": "'brightness': 40, color: '#333333'",
         "msgs": []
       }
     }
@@ -57,7 +57,7 @@ Input: luxury space gay communism
     "msg": {
       "propose": {
         "title": "luxury space gay communism",
-        "description": "'brightness': '100', 'color': '#C0C0C0'}",
+        "description": "'brightness': '100', 'color': '#C0C0C0'",
         "msgs": []
       }
     }
@@ -85,7 +85,7 @@ async def output(your_microworld_aesthetic):
         print(e)
         print("CosmWasm message not valid, retrying...")
         retries += 1
-        if retries < 10:
+        if retries < 5:
             await output(your_microworld_aesthetic)
         else:
             print("CosmWasm message not valid, giving up.")
@@ -95,4 +95,4 @@ async def output(your_microworld_aesthetic):
 demo = gr.Interface(
     fn=output, inputs="text", outputs="text", input_desc="Microworld vibe"
 )
-demo.launch(share=True)
+demo.launch()
