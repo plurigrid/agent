@@ -34,11 +34,12 @@ Include specification string itself instead of <specification> into the title fi
   }
 }
 
-Please make sure to only edit brightness, color, and title and keep the message structure in tact.
+Please make sure to only edit brightness and color and keep the message structure in tact.
 
 For example:
 
 Input: shadowy supercoder
+Output: 
 {
   "propose": {
     "msg": {
@@ -52,6 +53,7 @@ Input: shadowy supercoder
 }
 
 Input: luxury space gay communism
+Out
 {
   "propose": {
     "msg": {
@@ -89,7 +91,10 @@ async def output(your_microworld_aesthetic):
             await output(your_microworld_aesthetic)
         else:
             print("CosmWasm message not valid, giving up.")
-    return msg
+    return (
+        "View your proposal here!: https://daodao.zone/dao/juno1jeq3xqkn9kypghjeqjnhsdlnjsltajm8r3s80tem3juxsjlfan3s2kzmsd#proposals\n"
+        + msg
+    )
 
 
 demo = gr.Interface(
