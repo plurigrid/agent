@@ -3,12 +3,85 @@ from langchain.chains.conversation.memory import ConversationalBufferWindowMemor
 import gradio as gr
 import cosmwasm
 import re
+from plurigrid import PlurigridOlog #, topics
+
+# depending on where we come from, we load the memory of the appropriate chatbot
+# we know which <topic> - 0,1,..,9 - derives actual config from file
+# topics = {"0": "p0.json", "1": "p1.json"}
+# start 9 instances for each coalition's Plurigrid
+
+p = PlurigridOlog("p0.json", "<dao_address>", "<agent_address>")
+# p1 ...
+member_username = "plurality@plurigrid.art"
+dao = p.dao_address
+member = "juno1337133713371337133713371337"
+#member = members[member_username]
+
+add_member_learnings = """
+Whenever I say things like:
+
+- include juno9000 into DAO
+- add to Plurigrid juno9000
+- + juno9000 to DAO
+- juno9000 add plzzzz
+
+and similar things, where "juno9000" is the address of the member to be added,
+I want to get the following:
+add_members_msg = {
+     "update_members": {
+        "add": [{"weight": 1, "addr": "<addr>"}],
+         "remove": [],
+     }
+}
+"""
+
+add_member_prompt = PromptTemplate(input_variables=[],
+                                   template=add_member_learnings)
+
+add_member_chain = LLMChain(
+    llm=OpenAI(temperature=0),
+    prompt=add_member_prompt,
+    verbose=True,
+    memory=ConversationalBufferWindowMemory(k=2),
+)
+
+def process_response_to_msg(llm_response):
+    llm_response = add_member_chain.predict(add_member_input=add_member_learnings)
+    response_bytes = response.encode('ascii')
+    base64_bytes = base64.b64encode(response_bytes)
+    base64_response = base64_bytes.decode('ascii')
+
+    msg = """
+    {
+        "propose": {
+            "msg": {
+                "propose": {
+                    "title": "Add member to a DAO",
+                    "description": "Adding a new member",
+                    "msgs": [
+                        {
+                            "wasm": {
+                                "execute": {
+                                    "contract_addr": "{%s}",
+                                    "funds": [],
+                                    "msg": "{%s}"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+    """ % (dao, base64_response)
+
+# template = "{history}{mw_input}"
 
 
-template = "{history}{mw_input}"
-human_input = ""
 
-mw_prompt = PromptTemplate(input_variables=["history", "mw_input"], template=template)
+#human_input = ""
+
+#mw_prompt = PromptTemplate(input_variables=["history", "mw_input"], template=template)
 
 mw_chain = LLMChain(
     llm=OpenAI(temperature=0),
@@ -69,7 +142,7 @@ Out
 Thanks!
 """
 
-mw_chain.predict(mw_input=mw_learnings)
+# mw_chain.predict(mw_input=mw_learnings)
 
 
 async def output(your_microworld_aesthetic):
@@ -97,7 +170,14 @@ async def output(your_microworld_aesthetic):
     )
 
 
-demo = gr.Interface(
-    fn=output, inputs="text", outputs="text", input_desc="Microworld vibe"
+def chattwat(bird):
+    process_response_to_msg(bird)
+
+
+chatui = gr.Interface(
+    fn=chattwat,
+    inputs=gr.inputs.Textbox(lines=3, label="e-gen:"),
+    outputs=gr.outputs.Textbox(label="Plurigrid #0")
 )
-demo.launch()
+
+chatui.launch()
