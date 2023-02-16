@@ -1,0 +1,1 @@
+https://anoma.net/blog/validity-predicates/

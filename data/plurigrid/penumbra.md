@@ -1,0 +1,2 @@
+One of our "power-ups" (previously unavailable actions in the game of grid growth) is so-called Hybrid IBC: the private validator and relayer set with a specific very limited channel transfer / receive
+[https://protocol.penumbra.zone/main/ibc.html]

@@ -1,0 +1,1 @@
+https://www.contractscounsel.com/t/us/safe-note

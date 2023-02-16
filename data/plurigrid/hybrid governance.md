@@ -1,0 +1,2 @@
+Commons plus the freedom allotted to the people with relative anonymity in technology. Integration of commons complexities into the governance of energy grids is the goal.
+[https://www.sciencedirect.com/science/article/pii/S0301479721003066]

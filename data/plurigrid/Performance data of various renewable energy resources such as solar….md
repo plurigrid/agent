@@ -1,0 +1,4 @@
+Performance data of various renewable energy resources such as solar and wind power, as well as traditional energy sources like fossil fuels. This includes data on the availability, capacity, and efficiency of these energy sources, which can be used to optimize resource allocation and unit commitments for a more efficient and reliable energy grid.
+
+Plurigrid Protocol aims to create reliable systems for aggregating performance data, providing verifiable performance-based incentives for resource allocation and unit commitments. It also aims to ensure interoperability for coordination infrastructure and privacy-preserving approaches to capacity/demand modeling, to create sustainable incentives and viable pluralistic decentralized alternatives that can adapt to any regionally specific conditions.
+

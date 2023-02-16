@@ -1,0 +1,4 @@
+- data sheets
+- model cards
+- [system cards](https://montrealethics.ai/system-cards-for-ai-based-decision-making-for-public-policy/)
+- implications for members

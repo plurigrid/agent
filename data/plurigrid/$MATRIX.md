@@ -1,0 +1,1 @@
+- the main token we're airdropping

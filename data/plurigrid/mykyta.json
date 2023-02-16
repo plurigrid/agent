@@ -1,0 +1,72 @@
+{
+	"issuanceDate": "2022-09-04T11:34:33.153Z",
+	"expiryDate": "2022-09-04T11:34:33.153Z",
+	"stamps": [
+		{
+			"provider": "Github",
+			"credential": {
+				"type": [
+					"VerifiableCredential"
+				],
+				"proof": {
+					"jws": "eyJhbGciOiJFZERTQSIsImNyaXQiOlsiYjY0Il0sImI2NCI6ZmFsc2V9..VdD2pSyNdawIVgCGQUmSW9VEDtAZzq-klJbgHkjhcgkqfWtD2m2Dls_8FZ7Jrpr6stUpKaTD_uZSGsOOs5QaDw",
+					"type": "Ed25519Signature2018",
+					"created": "2022-09-04T11:34:18.646Z",
+					"proofPurpose": "assertionMethod",
+					"verificationMethod": "did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC#z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC"
+				},
+				"issuer": "did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC",
+				"@context": [
+					"https://www.w3.org/2018/credentials/v1"
+				],
+				"issuanceDate": "2022-09-04T11:34:18.646Z",
+				"expirationDate": "2022-12-03T11:34:18.646Z",
+				"credentialSubject": {
+					"id": "did:pkh:eip155:1:0xb21DFdf9Be0B7C9A3bD5f5bb1376E2430F312987",
+					"hash": "v0.0.0:kBlExFkM1YUhfhgGvDytH+SgVPY3eWG5eRGOzD0/B24=",
+					"@context": [
+						{
+							"hash": "https://schema.org/Text",
+							"provider": "https://schema.org/Text"
+						}
+					],
+					"provider": "Github"
+				}
+			},
+			"streamId": "ceramic://kjzl6cwe1jw147n39rgg5zt39pwwh0wsjv4l1txh9hg5elkkdmxlwfld0lha8r1"
+		},
+		{
+			"provider": "Twitter",
+			"credential": {
+				"type": [
+					"VerifiableCredential"
+				],
+				"proof": {
+					"jws": "eyJhbGciOiJFZERTQSIsImNyaXQiOlsiYjY0Il0sImI2NCI6ZmFsc2V9..fw8-Guj7RlnQVtpz4iXjRiiJ0qzyGhlC9Q4F7kSR0CwNAnWsfDheymYsFwfCKRujFxcYz3rzrnplW6cWXNOiBA",
+					"type": "Ed25519Signature2018",
+					"created": "2022-09-05T17:33:14.131Z",
+					"proofPurpose": "assertionMethod",
+					"verificationMethod": "did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC#z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC"
+				},
+				"issuer": "did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC",
+				"@context": [
+					"https://www.w3.org/2018/credentials/v1"
+				],
+				"issuanceDate": "2022-09-05T17:33:14.130Z",
+				"expirationDate": "2022-12-04T17:33:14.130Z",
+				"credentialSubject": {
+					"id": "did:pkh:eip155:1:0xb21DFdf9Be0B7C9A3bD5f5bb1376E2430F312987",
+					"hash": "v0.0.0:ikY+7ULNbeAO9jQG21poirKwPtNuTps5aDLJ/GW1uFs=",
+					"@context": [
+						{
+							"hash": "https://schema.org/Text",
+							"provider": "https://schema.org/Text"
+						}
+					],
+					"provider": "Twitter"
+				}
+			},
+			"streamId": "ceramic://kjzl6cwe1jw145amo8pbuabmiefsz2kg5xfgm3k2hxtui8x6y2lkwaayqtiy3kw"
+		}
+	]
+}

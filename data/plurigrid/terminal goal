@@ -1,0 +1,1 @@
+Ultimate goal: tech [pluralism] is already a departure from _true_ popular pluralism of the commons -- the only prerequisite is copresence with the grid and proof of humanity. The basest barrier to entry we should strive for is then solely a computer and access to the internet.

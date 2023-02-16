@@ -1,0 +1,9 @@
+{
+  "cssTheme": "Atom",
+  "theme": "system",
+  "baseFontSize": 16,
+  "interfaceFontFamily": "SF Pro Display",
+  "monospaceFontFamily": "SF Mono",
+  "textFontFamily": "SF Pro Text",
+  "translucency": false
+}

@@ -1,0 +1,1 @@
+ISI is a 501c3 non-profit organization to support PhD students, postdocs, and other researchers in open pursuit of simulation intelligence endeavors.

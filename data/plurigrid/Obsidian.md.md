@@ -1,0 +1,1 @@
+https://help.obsidian.md/Plugins/Command+palette
