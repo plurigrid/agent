@@ -22,6 +22,7 @@ class StreamAgent(BaseAgent):
                 aesthetic = text.replace("Microworld Update:", "").strip()
                 output = self.chain.run(aesthetic)["output_text"]
                 try:
+                    # todo: move this to utils
                     wasm_msg = json.loads(output)
                     encoded_wasm_msg = base64.b64encode(
                         json.dumps(wasm_msg).encode()
