@@ -2,8 +2,11 @@
 
 # Organization
 `agents/` Contains task-specific agents that interact with the shared state to perform specific tasks.
+
 `config/` Contains configuration files for the agent and the blockchain.
+
 `models/` Contains conversational large language model interfaces for various tasks the agents might perform.
+
 `utils/` Contains client logic for various services the agent interacts with, such as Zulip and Cosmos SDK.
 
 # Agents
