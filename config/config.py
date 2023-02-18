@@ -1,8 +1,12 @@
 class Config:
     # Zulip API key
-    ZULIP_API_KEY = "your-zulip-api-key"
-    # Zulip stream to listen on
-    ZULIP_STREAM = "general"
+    ZULIP_CONFIG_PATH = "~/zuliprc.txt"
+    # Zulip server url
+    ZULIP_BASE_URL = "https://plurigrid.zulipchat.com"
+    # Zulip stream to listen and send messages on
+    ZULIP_STREAM = "unhack"
+    # Zulip topic to listen and send messages on
+    ZULIP_TOPIC = "gm"
     # Cosmos chain ID
     CHAIN_ID = "juno-1"
     # Cosmos LCD URL

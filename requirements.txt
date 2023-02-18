@@ -1,1 +1,2 @@
 gpt_index
+httpcore==0.15
