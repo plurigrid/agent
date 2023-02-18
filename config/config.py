@@ -8,7 +8,7 @@ class Config:
     # Cosmos LCD URL
     LCD_URL = "https://lcd-juno.keplr.app"
     # Contract address to send messages to
-    CONTRACT_ADDRESS = "juno1jeq3xqkn9kypghjeqjnhsdlnjsltajm8r3s80tem3juxsjlfan3s2kzmsd"
+    CONTRACT_ADDRESS = "juno177zg5chuaxelxhr7qjzgjrvhm75c042xtme564d3mf7g3928pydq3x8lku"
     # Index created by GPTIndex
     INDEX_PATH = "./data/index.json"
     # Documents fed into GPTIndex

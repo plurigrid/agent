@@ -8,12 +8,15 @@ from config import config
 
 class CosmosSDKClient:
     def __init__(self):
-        self.chain_id = config.CHAIN_ID
-        self.lcd_url = config.LCD_URL
+        self.config = config.Config()
+        self.chain_id = self.config.CHAIN_ID
+        self.lcd_url = self.config.LCD_URL
+        self.contract_address = self.config.CONTRACT_ADDRESS
+        self.client = LCDClient(chain_id=self.chain_id, url=self.config.LCD_URL)
         self.mnemonic = os.getenv("MNEMONIC")
-        self.contract_address = config.CONTRACT_ADDRESS
-        self.wallet = None
-        self.juno_client = None
+        mk = MnemonicKey(self.mnemonic, "juno")
+        self.wallet = self.client.wallet(mk)
+        print("address: " + self.wallet.key.acc_address)
 
     def connect(self):
         self.juno_client = LCDClient(chain_id=self.chain_id, url=self.lcd_url)

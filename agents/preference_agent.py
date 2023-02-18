@@ -17,18 +17,19 @@ class PreferenceAgent(BaseAgent):
         self.config = config
         self.values = {}
         prefix = """I want you to talk to the user and prompt them to share their aesthetics with you.
-        Once they share their aesthetic, use the aesthetic_to_msg tool and make sure you
-        pass in the user's aesthetic as a single parameter. You have the following tools:"""
+        Once they share their aesthetic, use the aesthetic_chain tool and make sure you
+        pass in the user's aesthetic as a single parameter. 
+        You have the following tools:"""
         suffix = """Begin!"
         {chat_history}
         Question: {input}
         {agent_scratchpad}"""
         tools = [
             Tool(
-                name="aesthetic_to_msg_chain",
-                func=aesthetic_model.AestheticModel().aesthetic_to_msg,
+                name="aesthetic_chain",
+                func=aesthetic_model.AestheticModel().translate_aesthetic,
                 description="useful for when you need to describe an aesthetic",
-            ),
+            )
         ]
         prompt = ConversationalAgent.create_prompt(
             tools,
