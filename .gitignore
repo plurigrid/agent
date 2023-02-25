@@ -1,0 +1,19 @@
+# poetry
+__pypackages__/
+*.egg-info/
+*.egg
+.venv/
+
+# nix
+.nix*
+result
+result-*
+*.drv
+*.gc
+
+# shite
+.DS_Store
+
+# builds
+dist/
+build/

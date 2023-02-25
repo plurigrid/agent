@@ -6,6 +6,7 @@ pkgs.mkShell {
     python3
     poetry
     texlive.combined.scheme-full
+    gcc
+    nodejs
   ];
-
 }
