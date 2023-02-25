@@ -8,5 +8,6 @@ pkgs.mkShell {
     texlive.combined.scheme-full
     gcc
     nodejs
+    tree
   ];
 }
