@@ -18,7 +18,7 @@ class AestheticModel:
         self.client.upload_image(
             self.config.ZULIP_STREAM, self.config.ZULIP_TOPIC, image
         )
-
+        return ""
         # loop = asyncio.get_event_loop()
         # loop.run_until_complete(cosmos.CosmosSDKClient().execute_wasm_msg(output))
 
