@@ -1,3 +1,4 @@
+import sys
 from langchain import LLMChain, PromptTemplate
 from agent.config.config import IndexFileType
 from agent.config.config import IndexAgentType
@@ -34,7 +35,7 @@ class DigitalTwin(BaseAgent):
             self.agent_chain = self.build_tool_agent(index)
 
     def build_tool_agent(self, index):
-        print("building tool agent..")
+        print('building tool agent..')
         prefix = """
                 You are the user's "digital twin". Your role is to help them record their daily intentions in the morning, and summarize their day in the evening.
                 When a user says "gm", prompt them to share their intentions for the day. 
@@ -42,20 +43,20 @@ class DigitalTwin(BaseAgent):
                 summarize both what their intention was at the beginning of the day, and what they ended up accomplishing. 
                 Let's think step by step.
                 Good luck!"""
-
+        
         suffix = """Begin!"
                 {chat_history} 
                 {input}
                 Answer: 
                 {agent_scratchpad}"""
         tools = [
-            Tool(
-                name="knowledge_base",
-                func=lambda q: str(index.query(q)),
-                description="useful for when you want to answer questions about the author. The input to this tool should be a complete english sentence.",
-                return_direct=True,
-            ),
-        ]
+                    Tool(
+                        name = "knowledge_base",
+                        func=lambda q: str(index.query(q)),
+                        description="useful for when you want to answer questions about the author. The input to this tool should be a complete english sentence.",
+                        return_direct=True
+                    ),
+                ]
         prompt = ConversationalAgent.create_prompt(
             tools,
             prefix=prefix,
@@ -68,19 +69,13 @@ class DigitalTwin(BaseAgent):
         return AgentExecutor.from_agent_and_tools(
             agent=agent, tools=tools, verbose=True, memory=memory
         )
-
+        
     def build_memory_agent(self, index):
-        print("building memory agent..")
-        memory = GPTIndexMemory(
-            index=index,
-            memory_key="chat_history",
-            query_kwargs={"response_mode": "compact"},
-        )
-        llm = OpenAI(temperature=0)
-        return initialize_agent(
-            [], llm, agent="conversational-react-description", memory=memory
-        )
-
+        print('building memory agent..')
+        memory = GPTIndexMemory(index=index, memory_key="chat_history", query_kwargs={"response_mode": "compact"})
+        llm=OpenAI(temperature=0)
+        return initialize_agent([], llm, agent="conversational-react-description", memory=memory)
+        
     def repl(self):
         while True:
             user_input = input(">>> ")
