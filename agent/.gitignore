@@ -4,7 +4,6 @@ __pypackages__/
 *.egg-info/
 *.egg
 .venv/
-flagged/
 
 # nix
 .nix*
@@ -15,7 +14,6 @@ result-*
 
 # misc
 .DS_Store
-.vscode/
 
 # builds
 dist/

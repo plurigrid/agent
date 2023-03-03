@@ -18,8 +18,6 @@ class Render:
 
     def render_color(self, hsv):
         # Launch the Gradio interface in a temporary web page
-        print("hsv: \n")
-        print(hsv)
         demo = gr.Interface(
             self.hsv_to_rgb, inputs=gr.JSON(hsv), outputs=gr.outputs.HTML()
         )
