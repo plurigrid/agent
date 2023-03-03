@@ -22,3 +22,7 @@ The Agent will be used in the future to generate microworlds, which represent pa
 
 The Agent is a powerful tool for improving communication and collaboration among team members, generating valuable insights and data about organizations and their operations, and supporting the creation of safe and effective microworlds. By using prompts to initiate and record conversations with team members, the Agent helps establish a shared information context for organizations. By collecting and managing data, the Agent can output a work dependency graph to help team members better synthesize information about what the organization is, what others within the organization are working on, and how all of these elements compose together.
 
+## Appendix
+### Reproducibility
+`nix` and `poetry` allow [packaging for serverless execution](https://github.com/bananaml/serverless-template) with reliable system, package, and other application dependencies like Secrets correctly derived for individual `agent` runtime environment.
+>>>>>>> d897d47 (0.100)
