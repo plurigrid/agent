@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from utils import zulip
+from agent.utils import zulip
 
 class BaseAgent(ABC):
     def __init__(self, config):
