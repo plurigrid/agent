@@ -19,13 +19,13 @@ import gradio as gr
 
 
 
-documents = PagedPDFSplitter("/Users/barton/Lab/poet/agent/vdf.pdf").load_data()
+# documents = PagedPDFSplitter("/Users/barton/Lab/poet/agent/vdf.pdf").load_data()
 
-index = GPTSimpleVectorIndex(documents)
-index.save_to_disk('index.json')
+# index = GPTSimpleVectorIndex(documents)
+# index.save_to_disk('index.json') # TODO: use Zulip UUID here!
 
 
-pages = loader.load_and_split()
+# pages = loader.load_and_split()
 
 
 
@@ -42,11 +42,11 @@ tools = []
 llm = OpenAI(temperature=0.42, model="text-davinci-003")
 memory = ConversationSummaryMemory(memory_key="chat_history", llm=llm)
 
-# notagent = initialize_agent(tools,
-#     llm=llm,
-#     agent="conversational-react-description",
-#     verbose=True,
-#     memory=memory)
+notagent = initialize_agent(tools,
+    llm=llm,
+    agent="conversational-react-description",
+    verbose=True,
+    memory=memory)
 
 
 

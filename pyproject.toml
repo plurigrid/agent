@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10,<3.12"
-langchain = "^0.0.92"
+langchain = "^0.0.100"
 llama-index = "^0.4.8"
 pypdf2 = "^3.0.1"
 wandb = "^0.13.10"
@@ -17,6 +17,7 @@ gradio = "^3.19.1"
 duckdb = "^0.7.0"
 pypdf = "^3.4.1"
 ipython = "^8.10.0"
+jupyter = "^1.0.0"
 
 
 

@@ -7,7 +7,7 @@ pkgs.mkShell {
     poetry
     texlive.combined.scheme-full
     gcc
-    nodejs
     tree
+    just
   ];
 }
