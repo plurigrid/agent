@@ -137,6 +137,35 @@ files = [
 frozenlist = ">=1.1.0"
 
 [[package]]
+<<<<<<< Updated upstream
+=======
+name = "aleph-alpha-client"
+version = "2.16.1"
+description = "python client to interact with Aleph Alpha api endpoints"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "aleph-alpha-client-2.16.1.tar.gz", hash = "sha256:5e83a84326da1f32adb32702d9d0e3993e7d79b8aad8dc2301d1dd1866fcf6ed"},
+    {file = "aleph_alpha_client-2.16.1-py3-none-any.whl", hash = "sha256:59120218b695bb73dd9f2bda6630740808ad4d10bea82b1b988856d487b1f192"},
+]
+
+[package.dependencies]
+aiodns = ">=3.0.0"
+aiohttp = ">=3.8.3"
+aiohttp-retry = ">=2.8.3"
+requests = ">=2.28"
+tokenizers = ">=0.13.2"
+urllib3 = ">=1.26"
+
+[package.extras]
+dev = ["black", "ipykernel", "mypy", "nbconvert", "pytest", "pytest-aiohttp", "pytest-cov", "pytest-dotenv", "pytest-httpserver", "types-requests"]
+docs = ["sphinx", "sphinx-rtd-theme"]
+test = ["pytest", "pytest-aiohttp", "pytest-cov", "pytest-dotenv", "pytest-httpserver"]
+types = ["mypy", "types-requests"]
+
+[[package]]
+>>>>>>> Stashed changes
 name = "altair"
 version = "4.2.2"
 description = "Altair: A declarative statistical visualization library for Python."
@@ -323,6 +352,49 @@ pycryptodomex = ">=3.8,<4.0"
 urllib3 = ">=1.25.3,<3"
 
 [[package]]
+<<<<<<< Updated upstream
+=======
+name = "boto3"
+version = "1.26.84"
+description = "The AWS SDK for Python"
+category = "main"
+optional = false
+python-versions = ">= 3.7"
+files = [
+    {file = "boto3-1.26.84-py3-none-any.whl", hash = "sha256:d97176a7ffb37539bc53671cb0bf1c5b304f1c78bbd748553df549a9d4f92a9e"},
+    {file = "boto3-1.26.84.tar.gz", hash = "sha256:7ab7bb335b726e2f472b5c050028198d16338560c83c40b2bd2bd4e4018ec802"},
+]
+
+[package.dependencies]
+botocore = ">=1.29.84,<1.30.0"
+jmespath = ">=0.7.1,<2.0.0"
+s3transfer = ">=0.6.0,<0.7.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
+
+[[package]]
+name = "botocore"
+version = "1.29.84"
+description = "Low-level, data-driven core of boto 3."
+category = "main"
+optional = false
+python-versions = ">= 3.7"
+files = [
+    {file = "botocore-1.29.84-py3-none-any.whl", hash = "sha256:0f976427ad0a2602624ba784b5db328a865c2e9e0cc1bb6d8cffb6c0a2d177e1"},
+    {file = "botocore-1.29.84.tar.gz", hash = "sha256:a36f7f6f8eae5dbd4a1cc8cb6fc747f6315500541181eff2093ee0529fc8e4bc"},
+]
+
+[package.dependencies]
+jmespath = ">=0.7.1,<2.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+urllib3 = ">=1.25.4,<1.27"
+
+[package.extras]
+crt = ["awscrt (==0.16.9)"]
+
+[[package]]
+>>>>>>> Stashed changes
 name = "certifi"
 version = "2022.12.7"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -579,6 +651,57 @@ files = [
 ]
 
 [[package]]
+<<<<<<< Updated upstream
+=======
+name = "deeplake"
+version = "3.2.13"
+description = "Activeloop Deep Lake"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "deeplake-3.2.13.tar.gz", hash = "sha256:ad9016fd6cd9a0e6c9952c5beb21d37065881eedd8e67ab222ecc03b644d0102"},
+]
+
+[package.dependencies]
+boto3 = "*"
+click = "*"
+hub = ">=2.8.7"
+humbug = ">=0.2.6"
+numcodecs = "*"
+numpy = "*"
+pathos = "*"
+pillow = "*"
+pyjwt = "*"
+tqdm = "*"
+
+[package.extras]
+all = ["IPython", "av (>=8.1.0)", "flask", "google-api-python-client (>=2.31.0,<2.32.0)", "google-auth (>=2.0.1,<2.1.0)", "google-auth-oauthlib (>=0.4.5,<0.5.0)", "google-cloud-storage (>=1.42.0,<1.43.0)", "laspy", "libdeeplake (==0.0.39)", "nibabel", "oauth2client (>=4.1.3,<4.2.0)", "pydicom"]
+audio = ["av (>=8.1.0)"]
+av = ["av (>=8.1.0)"]
+dicom = ["nibabel", "pydicom"]
+enterprise = ["libdeeplake (==0.0.39)", "pyjwt"]
+gcp = ["google-auth (>=2.0.1,<2.1.0)", "google-auth-oauthlib (>=0.4.5,<0.5.0)", "google-cloud-storage (>=1.42.0,<1.43.0)"]
+gdrive = ["google-api-python-client (>=2.31.0,<2.32.0)", "google-auth (>=2.0.1,<2.1.0)", "google-auth-oauthlib (>=0.4.5,<0.5.0)", "oauth2client (>=4.1.3,<4.2.0)"]
+medical = ["nibabel", "pydicom"]
+point-cloud = ["laspy"]
+video = ["av (>=8.1.0)"]
+visualizer = ["IPython", "flask"]
+
+[[package]]
+name = "defusedxml"
+version = "0.7.1"
+description = "XML bomb protection for Python stdlib modules"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
+    {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
+]
+
+[[package]]
+>>>>>>> Stashed changes
 name = "deprecated"
 version = "1.2.13"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
@@ -1334,14 +1457,23 @@ files = [
 
 [[package]]
 name = "langchain"
+<<<<<<< Updated upstream
 version = "0.0.92"
+=======
+version = "0.0.100"
+>>>>>>> Stashed changes
 description = "Building applications with LLMs through composability"
 category = "main"
 optional = false
 python-versions = ">=3.8.1,<4.0"
 files = [
+<<<<<<< Updated upstream
     {file = "langchain-0.0.92-py3-none-any.whl", hash = "sha256:9704cb7f2e3c60556d98505ff6ad18ddf5b478c43d78b92c8c1927971f8af6e9"},
     {file = "langchain-0.0.92.tar.gz", hash = "sha256:87aed09189edaca247e6969ca5682d0d35232ec24003b3840d6e6b0acd58e668"},
+=======
+    {file = "langchain-0.0.100-py3-none-any.whl", hash = "sha256:e8b021e058030c9fe9b2da0911e8542c5d31dbbd3773850477705638e6b0fb4e"},
+    {file = "langchain-0.0.100.tar.gz", hash = "sha256:d7d27fa2952c3bd423fa025cec6221a9194cecd7ff9663e484452b3f2d7b15a5"},
+>>>>>>> Stashed changes
 ]
 
 [package.dependencies]
@@ -1355,7 +1487,11 @@ SQLAlchemy = ">=1,<2"
 tenacity = ">=8.1.0,<9.0.0"
 
 [package.extras]
+<<<<<<< Updated upstream
 all = ["anthropic (>=0.2.2,<0.3.0)", "beautifulsoup4 (>=4,<5)", "cohere (>=3,<4)", "elasticsearch (>=8,<9)", "faiss-cpu (>=1,<2)", "google-api-python-client (==2.70.0)", "google-search-results (>=2,<3)", "huggingface_hub (>=0,<1)", "jinja2 (>=3,<4)", "manifest-ml (>=0.0.1,<0.0.2)", "networkx (>=2.6.3,<3.0.0)", "nlpcloud (>=1,<2)", "nltk (>=3,<4)", "openai (>=0,<1)", "opensearch-py (>=2.0.0,<3.0.0)", "pinecone-client (>=2,<3)", "pypdf (>=3.4.0,<4.0.0)", "qdrant-client (>=0.11.7,<0.12.0)", "redis (>=4,<5)", "sentence-transformers (>=2,<3)", "spacy (>=3,<4)", "tensorflow-text (>=2.11.0,<3.0.0)", "tiktoken (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)", "weaviate-client (>=3,<4)", "wikipedia (>=1,<2)", "wolframalpha (==5.0.0)"]
+=======
+all = ["anthropic (>=0.2.2,<0.3.0)", "beautifulsoup4 (>=4,<5)", "cohere (>=3,<4)", "elasticsearch (>=8,<9)", "faiss-cpu (>=1,<2)", "google-api-python-client (==2.70.0)", "google-search-results (>=2,<3)", "huggingface_hub (>=0,<1)", "jinja2 (>=3,<4)", "manifest-ml (>=0.0.1,<0.0.2)", "networkx (>=2.6.3,<3.0.0)", "nlpcloud (>=1,<2)", "nltk (>=3,<4)", "nomic (>=1.0.43,<2.0.0)", "openai (>=0,<1)", "opensearch-py (>=2.0.0,<3.0.0)", "pinecone-client (>=2,<3)", "pypdf (>=3.4.0,<4.0.0)", "qdrant-client (>=1.0.4,<2.0.0)", "redis (>=4,<5)", "sentence-transformers (>=2,<3)", "spacy (>=3,<4)", "tensorflow-text (>=2.11.0,<3.0.0)", "tiktoken (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)", "weaviate-client (>=3,<4)", "wikipedia (>=1,<2)", "wolframalpha (==5.0.0)"]
+>>>>>>> Stashed changes
 llms = ["anthropic (>=0.2.2,<0.3.0)", "cohere (>=3,<4)", "huggingface_hub (>=0,<1)", "manifest-ml (>=0.0.1,<0.0.2)", "nlpcloud (>=1,<2)", "openai (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)"]
 
 [[package]]
@@ -1381,13 +1517,21 @@ test = ["coverage", "pytest", "pytest-cov"]
 
 [[package]]
 name = "llama-index"
+<<<<<<< Updated upstream
 version = "0.4.15"
+=======
+version = "0.4.19"
+>>>>>>> Stashed changes
 description = "Interface between LLMs and your data."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
+<<<<<<< Updated upstream
     {file = "llama_index-0.4.15.tar.gz", hash = "sha256:45d1263f3930ef2b4138cd2e6da92c19626b55227cfb10f2ab3184efb780a851"},
+=======
+    {file = "llama_index-0.4.19.tar.gz", hash = "sha256:41046da5c9ae3296544f666851c104f2447c8f6395ff5fbad470362972bf740e"},
+>>>>>>> Stashed changes
 ]
 
 [package.dependencies]
@@ -2209,6 +2353,67 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
+<<<<<<< Updated upstream
+=======
+name = "platformdirs"
+version = "3.1.0"
+description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "platformdirs-3.1.0-py3-none-any.whl", hash = "sha256:13b08a53ed71021350c9e300d4ea8668438fb0046ab3937ac9a29913a1a1350a"},
+    {file = "platformdirs-3.1.0.tar.gz", hash = "sha256:accc3665857288317f32c7bebb5a8e482ba717b474f3fc1d18ca7f9214be0cef"},
+]
+
+[package.extras]
+docs = ["furo (>=2022.12.7)", "proselint (>=0.13)", "sphinx (>=6.1.3)", "sphinx-autodoc-typehints (>=1.22,!=1.23.4)"]
+test = ["appdirs (==1.4.4)", "covdefaults (>=2.2.2)", "pytest (>=7.2.1)", "pytest-cov (>=4)", "pytest-mock (>=3.10)"]
+
+[[package]]
+name = "pox"
+version = "0.3.2"
+description = "utilities for filesystem exploration and automated builds"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pox-0.3.2-py3-none-any.whl", hash = "sha256:56fe2f099ecd8a557b8948082504492de90e8598c34733c9b1fdeca8f7b6de61"},
+    {file = "pox-0.3.2.tar.gz", hash = "sha256:e825225297638d6e3d49415f8cfb65407a5d15e56f2fb7fe9d9b9e3050c65ee1"},
+]
+
+[[package]]
+name = "ppft"
+version = "1.7.6.6"
+description = "distributed and parallel python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "ppft-1.7.6.6-py3-none-any.whl", hash = "sha256:f355d2caeed8bd7c9e4a860c471f31f7e66d1ada2791ab5458ea7dca15a51e41"},
+    {file = "ppft-1.7.6.6.tar.gz", hash = "sha256:f933f0404f3e808bc860745acb3b79cd4fe31ea19a20889a645f900415be60f1"},
+]
+
+[package.extras]
+dill = ["dill (>=0.3.6)"]
+
+[[package]]
+name = "prometheus-client"
+version = "0.16.0"
+description = "Python client for the Prometheus monitoring system."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "prometheus_client-0.16.0-py3-none-any.whl", hash = "sha256:0836af6eb2c8f4fed712b2f279f6c0a8bbab29f9f4aa15276b91c7cb0d1616ab"},
+    {file = "prometheus_client-0.16.0.tar.gz", hash = "sha256:a03e35b359f14dd1630898543e2120addfdeacd1a6069c1367ae90fd93ad3f48"},
+]
+
+[package.extras]
+twisted = ["twisted"]
+
+[[package]]
+>>>>>>> Stashed changes
 name = "prompt-toolkit"
 version = "3.0.38"
 description = "Library for building powerful interactive command lines in Python"
@@ -3148,33 +3353,33 @@ doc = ["reno", "sphinx", "tornado (>=4.5)"]
 
 [[package]]
 name = "tiktoken"
-version = "0.2.0"
-description = ""
+version = "0.3.0"
+description = "tiktoken is a fast BPE tokeniser for use with OpenAI's models"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "tiktoken-0.2.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d06705b55bb5f6c194285b6d15ad31bd7586d44fe433be31bc3694cf8c70169c"},
-    {file = "tiktoken-0.2.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:29f2969945fc430f817c907f59a2da9e7b797fe65527ba5b9442618643a0dc86"},
-    {file = "tiktoken-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:546455f27b6f7981d17de265b8b99e2fef980fbc3fde1d94b551f8354902000e"},
-    {file = "tiktoken-0.2.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:54b5dc05f934ac68e8da4d2cc3acd77bc6968114b09669056f1bff12acc57049"},
-    {file = "tiktoken-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:5d3c48cb5649ce6bb2b207377dfdaa855e1e771b2e7f59fb251182c227573619"},
-    {file = "tiktoken-0.2.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:a55f983735745df9a87161d9e0ce9ef7d216039d389246be98c6d416bbb2452f"},
-    {file = "tiktoken-0.2.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:175de868393039a85fdf4c7cfb9b8883d1b248b9a3d9d0129d30414f5a59c333"},
-    {file = "tiktoken-0.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d6cd97b8cd14e3fe6647baa71c67f7f6b21a401fa996ccc3d93bf0ae02162af2"},
-    {file = "tiktoken-0.2.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:806e2b8c0b9786c0e3212e8b3a6ac8f5840066c00a31b89e6c8d9ba0421e77d7"},
-    {file = "tiktoken-0.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:57b753aa9813f06fa5a26da2622114bf9769a8d1dca1b276d3613ee15da5b09d"},
-    {file = "tiktoken-0.2.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:aa3c15b87bb2cea56ecc8fe4c7bf105c5c2dc4090c2df97c141100488297173a"},
-    {file = "tiktoken-0.2.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:bd98fc4a9ec967a089c62497f21277b53aa3e15a6fec731ac707eea4d5527938"},
-    {file = "tiktoken-0.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab10ad3280f348a0d3bfea6d503c6aa84676b159692701bc7604e67129bd2135"},
-    {file = "tiktoken-0.2.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:59296d495aa6aec375a75f07da44fabb9720632c9404b41b9cbfe95e17966345"},
-    {file = "tiktoken-0.2.0-cp38-cp38-win_amd64.whl", hash = "sha256:3b078e6109d522c5ffc52859520eef6c17a3b120ed52b79f48cae0badff08fe0"},
-    {file = "tiktoken-0.2.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:aef47e8037652b18d2665b77e1f9416d3a86ccd383b039d0dfcb7d92085cef6d"},
-    {file = "tiktoken-0.2.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:d0f62f8349a5412962326dbc41c3823a1f381d8ab62afbee94480d8296499d8e"},
-    {file = "tiktoken-0.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9d0dbf7e1940427c11f0c8ab9046ad98d774850b21559b37ca60ff30d3a14620"},
-    {file = "tiktoken-0.2.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:8f1a7c6bec42a2fb5309a161d1b891fe5e181d4b620a962923a925f45fe25697"},
-    {file = "tiktoken-0.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:3349fd809d17b722814a6a700e4bc0125527f39057b57a02ed42f53bb4e6e2f5"},
-    {file = "tiktoken-0.2.0.tar.gz", hash = "sha256:df41a3d478499757b5b32eae5e97657cf159d8d9e6764049dd7c3abb49e1b40f"},
+    {file = "tiktoken-0.3.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:15232605e9bc7c2dfa6f67f5608389f8caabca03ef577e5d01bc1c9c5c90e9df"},
+    {file = "tiktoken-0.3.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:ca6e972e74903c2dc36631f0061240972cdab99bd7b559555628a34e965484f2"},
+    {file = "tiktoken-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:98d91ea78a792c28664cbc5bee81440bb17393530279b71e3216de8a82253bc2"},
+    {file = "tiktoken-0.3.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:a62a2a5d29bfe93170e59533951c687f37c90a2610ba780bcca5eec8729468c9"},
+    {file = "tiktoken-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:c57a1a61167525f4eca8c7b09ebb20e85a77f6de913a07eb6547acf60e9dbe7f"},
+    {file = "tiktoken-0.3.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:9e04bdabb9ff19a8a0100dae665df8f23838593d6ab6490790fcfe199ee4a8e5"},
+    {file = "tiktoken-0.3.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:002429fcd9b004cb3b3e859c5ebe9ea8d916a51378128ebedd2bf3bf6320401a"},
+    {file = "tiktoken-0.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1eaeeb52a79af618eac095ca91f11ba96d8b18a7e3019ecfaaaa2691838392ba"},
+    {file = "tiktoken-0.3.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:38f7c2c790cbc8f9122c8f2bcd543d385b8e5557becade29fae6de5ddba74085"},
+    {file = "tiktoken-0.3.0-cp311-cp311-win_amd64.whl", hash = "sha256:ff26fe25480a03fdd15de2dc6c33afab632d5c4deab33b054c42fa25fea98606"},
+    {file = "tiktoken-0.3.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:abc660f7da3c8b47435009ea4c428a6dd6270727a4574ee8d31514290425689b"},
+    {file = "tiktoken-0.3.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:77cc1c6cf80d2838131cad91dd0a1146e769b0797726591679feae9b20e3ebd6"},
+    {file = "tiktoken-0.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1fd12d235e57ddf0e5298aaa650b62f8d9b6269378bfe2e3e480bfe887f1ec21"},
+    {file = "tiktoken-0.3.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:3605d349903749787bf7c50a294a80a675bd988d7f4a4d077a813c4e055f8f4a"},
+    {file = "tiktoken-0.3.0-cp38-cp38-win_amd64.whl", hash = "sha256:22fd239a81609614cbcff331b14046c3d45ee53c38864d448d7fdbb1bb8b9754"},
+    {file = "tiktoken-0.3.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:38f34b23122b1a66456c8db98657a3eb5de0c2c361f35bd85dd4565c3e98edd5"},
+    {file = "tiktoken-0.3.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:0f9786a9f6242dd4f15be96a3b39d73428be847ee4a6ba196cae578bb9e9f76c"},
+    {file = "tiktoken-0.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2cdf72ffe83237a485c7e8f9a609d7d17041e1d866b5c5c424e83c82897f8ea0"},
+    {file = "tiktoken-0.3.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:9a5425409d8226e017d482120b070596450d05874e0c99c3f4e788ab9d91da64"},
+    {file = "tiktoken-0.3.0-cp39-cp39-win_amd64.whl", hash = "sha256:77650f9b4584fc26ba337c00e2d86f847acca1fa03ddf865fb1db935871c6f9e"},
+    {file = "tiktoken-0.3.0.tar.gz", hash = "sha256:2476a4f4d29293762dc3320d50d866202d7e1c562ac378a785dde51057dcef5e"},
 ]
 
 [package.dependencies]
@@ -3769,4 +3974,8 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10,<3.12"
+<<<<<<< Updated upstream
 content-hash = "d5a92dcf99bd98248cafe95577c62f4bd4e2084f691275abf41c7c5e1f24c0a7"
+=======
+content-hash = "8448d39da10ab579c930ff17e57806a714b162df45e5dabcd1afd145caed0e7e"
+>>>>>>> Stashed changes
