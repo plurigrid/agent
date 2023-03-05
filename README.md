@@ -10,6 +10,10 @@ The Agent is a conversational assistant designed to help team members in organiz
 4. ??? (e.g. `python <...>`)
 5. PROFIT!11!!!
 
+
+## Running it
+Set `OPENAI_API_KEY` environment varibale if accessing models by OpenAI.
+
 ## Organizational Loops
 
 In its current form, the Agent facilitates a daily "gm --> gn" loop for team members. When a team member says "gm" to the agent, it prompts each team member to share their intentions for the day, starting with the person who initiated the conversation. The agent records each person's response. When a team member says "gn" to the agent, it prompts each team member to share what they accomplished that day, starting with the person who initiated the conversation. The agent records each person's response and can output a work dependency graph based on the data collected.
