@@ -44,4 +44,3 @@ The Agent is a powerful tool for improving communication and collaboration among
 ## Appendix
 ### Reproducibility
 `nix` and `poetry` allow [packaging for serverless execution](https://github.com/bananaml/serverless-template) with reliable system, package, and other application dependencies like Secrets correctly derived for individual `agent` runtime environment.
->>>>>>> d897d47 (0.100)
