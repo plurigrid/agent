@@ -5,6 +5,21 @@ The Agent is a conversational assistant designed to help team members in organiz
 ## Manually
 0. Clone this repo
 1. Install [nix](https://nixos.org/download.html#nix-install-macos)
+To test installation:
+1.1 run `echo $PATH` and ensure `{...}/.nix-profile/bin` is the first element; if not, try `export PATH=$HOME/.nix-profile/bin:$PATH`
+1.2 create `shell.nix`:
+```
+{ pkgs ? import <nixpkgs> {} }:
+
+pkgs.mkShell {
+
+  buildInputs = with pkgs; [
+    sl
+    wget
+  ];
+}
+```
+1.2 if you run `nix-shell` from the directory where `shell.nix` exists, you should be dropped into a new shell and now have `sl` and `wget` binaries which you can test by running
 2. Run `poetry update`
 3. Run `poetry shell` inside `agent/agent`
 4. ??? (e.g. `python <...>`)
