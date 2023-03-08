@@ -193,18 +193,6 @@ files = [
 ]
 
 [[package]]
-name = "appnope"
-version = "0.1.3"
-description = "Disable App Nap on macOS >= 10.9"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "appnope-0.1.3-py2.py3-none-any.whl", hash = "sha256:265a455292d0bd8a72453494fa24df5a11eb18373a60c7c0430889f22548605e"},
-    {file = "appnope-0.1.3.tar.gz", hash = "sha256:02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24"},
-]
-
-[[package]]
 name = "argilla"
 version = "1.3.1"
 description = "Open-source tool for exploring, labeling, and monitoring data for NLP projects."
@@ -231,24 +219,6 @@ wrapt = ">=1.13,<1.15"
 [package.extras]
 listeners = ["prodict (>=0.8.0,<0.9.0)", "schedule (>=1.1.0,<1.2.0)"]
 server = ["Deprecated (>=1.2.0,<1.3.0)", "PyYAML (>=5.4.1,<6.1.0)", "aiofiles (>=0.6,<22.2)", "brotli-asgi (>=1.1,<1.3)", "elasticsearch (>=7.11.0,<8.6.0)", "fastapi (>=0.75,<0.89)", "luqum (>=0.11,<0.13)", "opensearch-py (>=1.0,<2.1)", "passlib[bcrypt] (>=1.7.4,<1.8.0)", "psutil (>=5.8,<5.10)", "python-jose[cryptography] (>=3.2,<3.4)", "python-multipart (>=0.0.5,<0.1.0)", "scikit-learn (>=0.24.2)", "segment-analytics-python (==2.2.0)", "smart-open", "uvicorn[standard] (>=0.15.0,<0.21.0)"]
-
-[[package]]
-name = "asttokens"
-version = "2.2.1"
-description = "Annotate AST trees with source code positions"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "asttokens-2.2.1-py2.py3-none-any.whl", hash = "sha256:6b0ac9e93fb0335014d382b8fa9b3afa7df546984258005da0b9e7095b3deb1c"},
-    {file = "asttokens-2.2.1.tar.gz", hash = "sha256:4622110b2a6f30b77e1473affaa97e711bc2f07d3f10848420ff1898edbe94f3"},
-]
-
-[package.dependencies]
-six = "*"
-
-[package.extras]
-test = ["astroid", "pytest"]
 
 [[package]]
 name = "async-timeout"
@@ -280,18 +250,6 @@ dev = ["attrs[docs,tests]"]
 docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier", "zope.interface"]
 tests = ["attrs[tests-no-zope]", "zope.interface"]
 tests-no-zope = ["cloudpickle", "cloudpickle", "hypothesis", "hypothesis", "mypy (>=0.971,<0.990)", "mypy (>=0.971,<0.990)", "pympler", "pympler", "pytest (>=4.3.0)", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-mypy-plugins", "pytest-xdist[psutil]", "pytest-xdist[psutil]"]
-
-[[package]]
-name = "backcall"
-version = "0.2.0"
-description = "Specifications for callback functions passed in to an API"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "backcall-0.2.0-py2.py3-none-any.whl", hash = "sha256:fbbce6a29f263178a1f7915c1940bde0ec2b2a967566fe1c65c1dfb7422bd255"},
-    {file = "backcall-0.2.0.tar.gz", hash = "sha256:5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e"},
-]
 
 [[package]]
 name = "backoff"
@@ -433,6 +391,18 @@ files = [
 ]
 
 [[package]]
+name = "clang"
+version = "14.0"
+description = "libclang python bindings"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "clang-14.0-py3-none-any.whl", hash = "sha256:049c7f7740f46f733fc96b5395910ffc57f56d4d61bca65b5556e9772d146deb"},
+    {file = "clang-14.0.tar.gz", hash = "sha256:0fe241386d3b780666e032d8c2e482b1d434880185c685071aa38b78317e969f"},
+]
+
+[[package]]
 name = "click"
 version = "8.1.3"
 description = "Composable command line interface toolkit"
@@ -567,18 +537,6 @@ typing-inspect = ">=0.4.0"
 dev = ["flake8", "hypothesis", "ipython", "mypy (>=0.710)", "portray", "pytest (>=6.2.3)", "simplejson", "types-dataclasses"]
 
 [[package]]
-name = "decorator"
-version = "5.1.1"
-description = "Decorators for Humans"
-category = "main"
-optional = false
-python-versions = ">=3.5"
-files = [
-    {file = "decorator-5.1.1-py3-none-any.whl", hash = "sha256:b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"},
-    {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
-]
-
-[[package]]
 name = "deprecated"
 version = "1.2.13"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
@@ -595,6 +553,18 @@ wrapt = ">=1.10,<2"
 
 [package.extras]
 dev = ["PyTest", "PyTest (<5)", "PyTest-Cov", "PyTest-Cov (<2.6)", "bump2version (<1)", "configparser (<5)", "importlib-metadata (<3)", "importlib-resources (<4)", "sphinx (<2)", "sphinxcontrib-websupport (<2)", "tox", "zipp (<2)"]
+
+[[package]]
+name = "distro"
+version = "1.8.0"
+description = "Distro - an OS platform information API"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "distro-1.8.0-py3-none-any.whl", hash = "sha256:99522ca3e365cac527b44bde033f64c6945d90eb9f769703caaec52b09bbd3ff"},
+    {file = "distro-1.8.0.tar.gz", hash = "sha256:02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"},
+]
 
 [[package]]
 name = "docker-pycreds"
@@ -691,21 +661,6 @@ files = [
     {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
     {file = "et_xmlfile-1.1.0.tar.gz", hash = "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"},
 ]
-
-[[package]]
-name = "executing"
-version = "1.2.0"
-description = "Get the currently executing AST node of a frame, and other information"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "executing-1.2.0-py2.py3-none-any.whl", hash = "sha256:0314a69e37426e3608aada02473b4161d4caf5a4b244d1d0c48072b8fee7bacc"},
-    {file = "executing-1.2.0.tar.gz", hash = "sha256:19da64c18d2d851112f09c287f8d3dbbdf725ab0e569077efb6cdcbd3497c107"},
-]
-
-[package.extras]
-tests = ["asttokens", "littleutils", "pytest", "rich"]
 
 [[package]]
 name = "fastapi"
@@ -1146,65 +1101,6 @@ files = [
 ]
 
 [[package]]
-name = "ipython"
-version = "8.11.0"
-description = "IPython: Productive Interactive Computing"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "ipython-8.11.0-py3-none-any.whl", hash = "sha256:5b54478e459155a326bf5f42ee4f29df76258c0279c36f21d71ddb560f88b156"},
-    {file = "ipython-8.11.0.tar.gz", hash = "sha256:735cede4099dbc903ee540307b9171fbfef4aa75cfcacc5a273b2cda2f02be04"},
-]
-
-[package.dependencies]
-appnope = {version = "*", markers = "sys_platform == \"darwin\""}
-backcall = "*"
-colorama = {version = "*", markers = "sys_platform == \"win32\""}
-decorator = "*"
-jedi = ">=0.16"
-matplotlib-inline = "*"
-pexpect = {version = ">4.3", markers = "sys_platform != \"win32\""}
-pickleshare = "*"
-prompt-toolkit = ">=3.0.30,<3.0.37 || >3.0.37,<3.1.0"
-pygments = ">=2.4.0"
-stack-data = "*"
-traitlets = ">=5"
-
-[package.extras]
-all = ["black", "curio", "docrepr", "ipykernel", "ipyparallel", "ipywidgets", "matplotlib", "matplotlib (!=3.2.0)", "nbconvert", "nbformat", "notebook", "numpy (>=1.21)", "pandas", "pytest (<7)", "pytest (<7.1)", "pytest-asyncio", "qtconsole", "setuptools (>=18.5)", "sphinx (>=1.3)", "sphinx-rtd-theme", "stack-data", "testpath", "trio", "typing-extensions"]
-black = ["black"]
-doc = ["docrepr", "ipykernel", "matplotlib", "pytest (<7)", "pytest (<7.1)", "pytest-asyncio", "setuptools (>=18.5)", "sphinx (>=1.3)", "sphinx-rtd-theme", "stack-data", "testpath", "typing-extensions"]
-kernel = ["ipykernel"]
-nbconvert = ["nbconvert"]
-nbformat = ["nbformat"]
-notebook = ["ipywidgets", "notebook"]
-parallel = ["ipyparallel"]
-qtconsole = ["qtconsole"]
-test = ["pytest (<7.1)", "pytest-asyncio", "testpath"]
-test-extra = ["curio", "matplotlib (!=3.2.0)", "nbformat", "numpy (>=1.21)", "pandas", "pytest (<7.1)", "pytest-asyncio", "testpath", "trio"]
-
-[[package]]
-name = "jedi"
-version = "0.18.2"
-description = "An autocompletion tool for Python that can be used for text editors."
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "jedi-0.18.2-py2.py3-none-any.whl", hash = "sha256:203c1fd9d969ab8f2119ec0a3342e0b49910045abe6af0a3ae83a5764d54639e"},
-    {file = "jedi-0.18.2.tar.gz", hash = "sha256:bae794c30d07f6d910d32a7048af09b5a39ed740918da923c6b780790ebac612"},
-]
-
-[package.dependencies]
-parso = ">=0.8.0,<0.9.0"
-
-[package.extras]
-docs = ["Jinja2 (==2.11.3)", "MarkupSafe (==1.1.1)", "Pygments (==2.8.1)", "alabaster (==0.7.12)", "babel (==2.9.1)", "chardet (==4.0.0)", "commonmark (==0.8.1)", "docutils (==0.17.1)", "future (==0.18.2)", "idna (==2.10)", "imagesize (==1.2.0)", "mock (==1.0.1)", "packaging (==20.9)", "pyparsing (==2.4.7)", "pytz (==2021.1)", "readthedocs-sphinx-ext (==2.1.4)", "recommonmark (==0.5.0)", "requests (==2.25.1)", "six (==1.15.0)", "snowballstemmer (==2.1.0)", "sphinx (==1.8.5)", "sphinx-rtd-theme (==0.4.3)", "sphinxcontrib-serializinghtml (==1.1.4)", "sphinxcontrib-websupport (==1.2.4)", "urllib3 (==1.26.4)"]
-qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
-testing = ["Django (<3.1)", "attrs", "colorama", "docopt", "pytest (<7.0.0)"]
-
-[[package]]
 name = "jinja2"
 version = "3.1.2"
 description = "A very fast and expressive template engine."
@@ -1334,14 +1230,14 @@ files = [
 
 [[package]]
 name = "langchain"
-version = "0.0.92"
+version = "0.0.103"
 description = "Building applications with LLMs through composability"
 category = "main"
 optional = false
 python-versions = ">=3.8.1,<4.0"
 files = [
-    {file = "langchain-0.0.92-py3-none-any.whl", hash = "sha256:9704cb7f2e3c60556d98505ff6ad18ddf5b478c43d78b92c8c1927971f8af6e9"},
-    {file = "langchain-0.0.92.tar.gz", hash = "sha256:87aed09189edaca247e6969ca5682d0d35232ec24003b3840d6e6b0acd58e668"},
+    {file = "langchain-0.0.103-py3-none-any.whl", hash = "sha256:d015f187b6f44bd7704b23b28848a3661a56e4488bb94ed8a85cbebe297deffc"},
+    {file = "langchain-0.0.103.tar.gz", hash = "sha256:7ea6c4226f76f7dc381334008c0a1c03e6d50c95f9953d180117bc5d25b29dac"},
 ]
 
 [package.dependencies]
@@ -1355,7 +1251,7 @@ SQLAlchemy = ">=1,<2"
 tenacity = ">=8.1.0,<9.0.0"
 
 [package.extras]
-all = ["anthropic (>=0.2.2,<0.3.0)", "beautifulsoup4 (>=4,<5)", "cohere (>=3,<4)", "elasticsearch (>=8,<9)", "faiss-cpu (>=1,<2)", "google-api-python-client (==2.70.0)", "google-search-results (>=2,<3)", "huggingface_hub (>=0,<1)", "jinja2 (>=3,<4)", "manifest-ml (>=0.0.1,<0.0.2)", "networkx (>=2.6.3,<3.0.0)", "nlpcloud (>=1,<2)", "nltk (>=3,<4)", "openai (>=0,<1)", "opensearch-py (>=2.0.0,<3.0.0)", "pinecone-client (>=2,<3)", "pypdf (>=3.4.0,<4.0.0)", "qdrant-client (>=0.11.7,<0.12.0)", "redis (>=4,<5)", "sentence-transformers (>=2,<3)", "spacy (>=3,<4)", "tensorflow-text (>=2.11.0,<3.0.0)", "tiktoken (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)", "weaviate-client (>=3,<4)", "wikipedia (>=1,<2)", "wolframalpha (==5.0.0)"]
+all = ["aleph-alpha-client (>=2.15.0,<3.0.0)", "anthropic (>=0.2.2,<0.3.0)", "beautifulsoup4 (>=4,<5)", "cohere (>=3,<4)", "deeplake (>=3.2.9,<4.0.0)", "elasticsearch (>=8,<9)", "faiss-cpu (>=1,<2)", "google-api-python-client (==2.70.0)", "google-search-results (>=2,<3)", "huggingface_hub (>=0,<1)", "jinja2 (>=3,<4)", "manifest-ml (>=0.0.1,<0.0.2)", "networkx (>=2.6.3,<3.0.0)", "nlpcloud (>=1,<2)", "nltk (>=3,<4)", "nomic (>=1.0.43,<2.0.0)", "openai (>=0,<1)", "opensearch-py (>=2.0.0,<3.0.0)", "pinecone-client (>=2,<3)", "pypdf (>=3.4.0,<4.0.0)", "qdrant-client (>=1.0.4,<2.0.0)", "redis (>=4,<5)", "sentence-transformers (>=2,<3)", "spacy (>=3,<4)", "tensorflow-text (>=2.11.0,<3.0.0)", "tiktoken (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)", "weaviate-client (>=3,<4)", "wikipedia (>=1,<2)", "wolframalpha (==5.0.0)"]
 llms = ["anthropic (>=0.2.2,<0.3.0)", "cohere (>=3,<4)", "huggingface_hub (>=0,<1)", "manifest-ml (>=0.0.1,<0.0.2)", "nlpcloud (>=1,<2)", "openai (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)"]
 
 [[package]]
@@ -1381,25 +1277,23 @@ test = ["coverage", "pytest", "pytest-cov"]
 
 [[package]]
 name = "llama-index"
-version = "0.4.15"
+version = "0.4.22.post1"
 description = "Interface between LLMs and your data."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "llama_index-0.4.15.tar.gz", hash = "sha256:45d1263f3930ef2b4138cd2e6da92c19626b55227cfb10f2ab3184efb780a851"},
+    {file = "llama_index-0.4.22.post1.tar.gz", hash = "sha256:e4b6b00051ff69a5c1613968603be8dead2d0b4565726102613e6cef2a35f1c1"},
 ]
 
 [package.dependencies]
 dataclasses_json = "*"
 langchain = "*"
-nltk = "*"
 numpy = "*"
 openai = ">=0.26.4"
 pandas = "*"
-tenacity = "<8.2.0"
+tenacity = ">=8.2.0,<9.0.0"
 tiktoken = "*"
-transformers = "*"
 
 [[package]]
 name = "lxml"
@@ -1694,19 +1588,25 @@ pyparsing = ">=2.3.1"
 python-dateutil = ">=2.7"
 
 [[package]]
-name = "matplotlib-inline"
-version = "0.1.6"
-description = "Inline Matplotlib backend for Jupyter"
+name = "matrix-client"
+version = "0.4.0"
+description = "Client-Server SDK for Matrix"
 category = "main"
 optional = false
-python-versions = ">=3.5"
+python-versions = "*"
 files = [
-    {file = "matplotlib-inline-0.1.6.tar.gz", hash = "sha256:f887e5f10ba98e8d2b150ddcf4702c1e5f8b3a20005eb0f74bfdbd360ee6f304"},
-    {file = "matplotlib_inline-0.1.6-py3-none-any.whl", hash = "sha256:f1f41aab5328aa5aaea9b16d083b128102f8712542f819fe7e6a420ff581b311"},
+    {file = "matrix_client-0.4.0-py2.py3-none-any.whl", hash = "sha256:20cb42fb644879858c3fdd348d1c349c33676f11d1597f820abfd0fc0e009cb1"},
+    {file = "matrix_client-0.4.0.tar.gz", hash = "sha256:0678af40f2cb2f0928a908a410c029747d40cb961ac5a3f1bd05aa35563c3156"},
 ]
 
 [package.dependencies]
-traitlets = "*"
+requests = ">=2.22,<3.0"
+urllib3 = ">=1.21,<2.0"
+
+[package.extras]
+doc = ["Sphinx (>=1.7.6,<2.0.0)", "sphinx-rtd-theme (>=0.1.9,<0.2.0)", "sphinxcontrib-napoleon (>=0.5.3,<0.6.0)"]
+e2e = ["canonicaljson (>=1.1,<2.0)", "python-olm (>=3.1,<4.0)"]
+test = ["pytest (>=4.6,<6.0.0)", "responses (>=0.10.6,<0.11.0)"]
 
 [[package]]
 name = "mdit-py-plugins"
@@ -1914,13 +1814,14 @@ files = [
 
 [[package]]
 name = "openai"
-version = "0.26.5"
+version = "0.27.0"
 description = "Python client library for the OpenAI API"
 category = "main"
 optional = false
 python-versions = ">=3.7.1"
 files = [
-    {file = "openai-0.26.5.tar.gz", hash = "sha256:2882a59c67ae33c2716a04389a6e6680d061f073424953732f917fde219addfd"},
+    {file = "openai-0.27.0-py3-none-any.whl", hash = "sha256:7d4066ea529658a1f1696a8766912b3f3b7139faca860dc530bf102f0b19d42c"},
+    {file = "openai-0.27.0.tar.gz", hash = "sha256:0efa486016283607cb72c23eac346ac739a22613ff4bff101df72a138cb2de60"},
 ]
 
 [package.dependencies]
@@ -1931,7 +1832,7 @@ tqdm = "*"
 [package.extras]
 datalib = ["numpy", "openpyxl (>=3.0.7)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)"]
 dev = ["black (>=21.6b0,<22.0)", "pytest (>=6.0.0,<7.0.0)", "pytest-asyncio", "pytest-mock"]
-embeddings = ["matplotlib", "numpy", "openpyxl (>=3.0.7)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)", "plotly", "scikit-learn (>=1.0.2)", "sklearn", "tenacity (>=8.0.1)"]
+embeddings = ["matplotlib", "numpy", "openpyxl (>=3.0.7)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)", "plotly", "scikit-learn (>=1.0.2)", "scipy", "tenacity (>=8.0.1)"]
 wandb = ["numpy", "openpyxl (>=3.0.7)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)", "wandb"]
 
 [[package]]
@@ -2064,22 +1965,6 @@ pytz = ">=2020.1"
 test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
 
 [[package]]
-name = "parso"
-version = "0.8.3"
-description = "A Python Parser"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "parso-0.8.3-py2.py3-none-any.whl", hash = "sha256:c001d4636cd3aecdaf33cbb40aebb59b094be2a74c556778ef5576c175e19e75"},
-    {file = "parso-0.8.3.tar.gz", hash = "sha256:8c07be290bb59f03588915921e29e8a50002acaf2cdc5fa0e0114f91709fafa0"},
-]
-
-[package.extras]
-qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
-testing = ["docopt", "pytest (<6.0.0)"]
-
-[[package]]
 name = "pathtools"
 version = "0.1.2"
 description = "File system general utilities"
@@ -2088,33 +1973,6 @@ optional = false
 python-versions = "*"
 files = [
     {file = "pathtools-0.1.2.tar.gz", hash = "sha256:7c35c5421a39bb82e58018febd90e3b6e5db34c5443aaaf742b3f33d4655f1c0"},
-]
-
-[[package]]
-name = "pexpect"
-version = "4.8.0"
-description = "Pexpect allows easy control of interactive console applications."
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "pexpect-4.8.0-py2.py3-none-any.whl", hash = "sha256:0b48a55dcb3c05f3329815901ea4fc1537514d6ba867a152b581d69ae3710937"},
-    {file = "pexpect-4.8.0.tar.gz", hash = "sha256:fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"},
-]
-
-[package.dependencies]
-ptyprocess = ">=0.5"
-
-[[package]]
-name = "pickleshare"
-version = "0.7.5"
-description = "Tiny 'shelve'-like database with concurrency support"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "pickleshare-0.7.5-py2.py3-none-any.whl", hash = "sha256:9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56"},
-    {file = "pickleshare-0.7.5.tar.gz", hash = "sha256:87683d47965c1da65cdacaf31c8441d12b8044cdec9aca500cd78fc2c683afca"},
 ]
 
 [[package]]
@@ -2209,21 +2067,6 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
-name = "prompt-toolkit"
-version = "3.0.38"
-description = "Library for building powerful interactive command lines in Python"
-category = "main"
-optional = false
-python-versions = ">=3.7.0"
-files = [
-    {file = "prompt_toolkit-3.0.38-py3-none-any.whl", hash = "sha256:45ea77a2f7c60418850331366c81cf6b5b9cf4c7fd34616f733c5427e6abbb1f"},
-    {file = "prompt_toolkit-3.0.38.tar.gz", hash = "sha256:23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"},
-]
-
-[package.dependencies]
-wcwidth = "*"
-
-[[package]]
 name = "protobuf"
 version = "4.22.0"
 description = ""
@@ -2272,33 +2115,6 @@ files = [
 
 [package.extras]
 test = ["enum34", "ipaddress", "mock", "pywin32", "wmi"]
-
-[[package]]
-name = "ptyprocess"
-version = "0.7.0"
-description = "Run a subprocess in a pseudo terminal"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "ptyprocess-0.7.0-py2.py3-none-any.whl", hash = "sha256:4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"},
-    {file = "ptyprocess-0.7.0.tar.gz", hash = "sha256:5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"},
-]
-
-[[package]]
-name = "pure-eval"
-version = "0.2.2"
-description = "Safely evaluate AST nodes without side effects"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "pure_eval-0.2.2-py3-none-any.whl", hash = "sha256:01eaab343580944bc56080ebe0a674b39ec44a945e6d09ba7db3cb8cec289350"},
-    {file = "pure_eval-0.2.2.tar.gz", hash = "sha256:2b45320af6dfaa1750f543d714b6d1c520a1688dec6fd24d339063ce0aaa9ac3"},
-]
-
-[package.extras]
-tests = ["pytest"]
 
 [[package]]
 name = "pycryptodome"
@@ -2450,21 +2266,6 @@ files = [
     {file = "pydub-0.25.1-py2.py3-none-any.whl", hash = "sha256:65617e33033874b59d87db603aa1ed450633288aefead953b30bded59cb599a6"},
     {file = "pydub-0.25.1.tar.gz", hash = "sha256:980a33ce9949cab2a569606b65674d748ecbca4f0796887fd6f46173a7b0d30f"},
 ]
-
-[[package]]
-name = "pygments"
-version = "2.14.0"
-description = "Pygments is a syntax highlighting package written in Python."
-category = "main"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "Pygments-2.14.0-py3-none-any.whl", hash = "sha256:fa7bd7bd2771287c0de303af8bfdfc731f51bd2c6a47ab69d117138893b82717"},
-    {file = "Pygments-2.14.0.tar.gz", hash = "sha256:b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"},
-]
-
-[package.extras]
-plugins = ["importlib-metadata"]
 
 [[package]]
 name = "pyparsing"
@@ -3094,26 +2895,6 @@ pymysql = ["pymysql", "pymysql (<1)"]
 sqlcipher = ["sqlcipher3-binary"]
 
 [[package]]
-name = "stack-data"
-version = "0.6.2"
-description = "Extract data from python stack frames and tracebacks for informative displays"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "stack_data-0.6.2-py3-none-any.whl", hash = "sha256:cbb2a53eb64e5785878201a97ed7c7b94883f48b87bfb0bbe8b623c74679e4a8"},
-    {file = "stack_data-0.6.2.tar.gz", hash = "sha256:32d2dd0376772d01b6cb9fc996f3c8b57a357089dec328ed4b6553d037eaf815"},
-]
-
-[package.dependencies]
-asttokens = ">=2.1.0"
-executing = ">=1.2.0"
-pure-eval = "*"
-
-[package.extras]
-tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
-
-[[package]]
 name = "starlette"
 version = "0.25.0"
 description = "The little ASGI library that shines."
@@ -3133,14 +2914,14 @@ full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart", "pyyam
 
 [[package]]
 name = "tenacity"
-version = "8.1.0"
+version = "8.2.2"
 description = "Retry code until it succeeds"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "tenacity-8.1.0-py3-none-any.whl", hash = "sha256:35525cd47f82830069f0d6b73f7eb83bc5b73ee2fff0437952cedf98b27653ac"},
-    {file = "tenacity-8.1.0.tar.gz", hash = "sha256:e48c437fdf9340f5666b92cd7990e96bc5fc955e1298baf4a907e3972067a445"},
+    {file = "tenacity-8.2.2-py3-none-any.whl", hash = "sha256:2f277afb21b851637e8f52e6a613ff08734c347dc19ade928e519d7d2d8569b0"},
+    {file = "tenacity-8.2.2.tar.gz", hash = "sha256:43af037822bd0029025877f3b2d97cc4d7bb0c2991000a3d59d71517c5c969e0"},
 ]
 
 [package.extras]
@@ -3148,33 +2929,33 @@ doc = ["reno", "sphinx", "tornado (>=4.5)"]
 
 [[package]]
 name = "tiktoken"
-version = "0.2.0"
-description = ""
+version = "0.3.0"
+description = "tiktoken is a fast BPE tokeniser for use with OpenAI's models"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "tiktoken-0.2.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d06705b55bb5f6c194285b6d15ad31bd7586d44fe433be31bc3694cf8c70169c"},
-    {file = "tiktoken-0.2.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:29f2969945fc430f817c907f59a2da9e7b797fe65527ba5b9442618643a0dc86"},
-    {file = "tiktoken-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:546455f27b6f7981d17de265b8b99e2fef980fbc3fde1d94b551f8354902000e"},
-    {file = "tiktoken-0.2.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:54b5dc05f934ac68e8da4d2cc3acd77bc6968114b09669056f1bff12acc57049"},
-    {file = "tiktoken-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:5d3c48cb5649ce6bb2b207377dfdaa855e1e771b2e7f59fb251182c227573619"},
-    {file = "tiktoken-0.2.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:a55f983735745df9a87161d9e0ce9ef7d216039d389246be98c6d416bbb2452f"},
-    {file = "tiktoken-0.2.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:175de868393039a85fdf4c7cfb9b8883d1b248b9a3d9d0129d30414f5a59c333"},
-    {file = "tiktoken-0.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d6cd97b8cd14e3fe6647baa71c67f7f6b21a401fa996ccc3d93bf0ae02162af2"},
-    {file = "tiktoken-0.2.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:806e2b8c0b9786c0e3212e8b3a6ac8f5840066c00a31b89e6c8d9ba0421e77d7"},
-    {file = "tiktoken-0.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:57b753aa9813f06fa5a26da2622114bf9769a8d1dca1b276d3613ee15da5b09d"},
-    {file = "tiktoken-0.2.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:aa3c15b87bb2cea56ecc8fe4c7bf105c5c2dc4090c2df97c141100488297173a"},
-    {file = "tiktoken-0.2.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:bd98fc4a9ec967a089c62497f21277b53aa3e15a6fec731ac707eea4d5527938"},
-    {file = "tiktoken-0.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab10ad3280f348a0d3bfea6d503c6aa84676b159692701bc7604e67129bd2135"},
-    {file = "tiktoken-0.2.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:59296d495aa6aec375a75f07da44fabb9720632c9404b41b9cbfe95e17966345"},
-    {file = "tiktoken-0.2.0-cp38-cp38-win_amd64.whl", hash = "sha256:3b078e6109d522c5ffc52859520eef6c17a3b120ed52b79f48cae0badff08fe0"},
-    {file = "tiktoken-0.2.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:aef47e8037652b18d2665b77e1f9416d3a86ccd383b039d0dfcb7d92085cef6d"},
-    {file = "tiktoken-0.2.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:d0f62f8349a5412962326dbc41c3823a1f381d8ab62afbee94480d8296499d8e"},
-    {file = "tiktoken-0.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9d0dbf7e1940427c11f0c8ab9046ad98d774850b21559b37ca60ff30d3a14620"},
-    {file = "tiktoken-0.2.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:8f1a7c6bec42a2fb5309a161d1b891fe5e181d4b620a962923a925f45fe25697"},
-    {file = "tiktoken-0.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:3349fd809d17b722814a6a700e4bc0125527f39057b57a02ed42f53bb4e6e2f5"},
-    {file = "tiktoken-0.2.0.tar.gz", hash = "sha256:df41a3d478499757b5b32eae5e97657cf159d8d9e6764049dd7c3abb49e1b40f"},
+    {file = "tiktoken-0.3.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:15232605e9bc7c2dfa6f67f5608389f8caabca03ef577e5d01bc1c9c5c90e9df"},
+    {file = "tiktoken-0.3.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:ca6e972e74903c2dc36631f0061240972cdab99bd7b559555628a34e965484f2"},
+    {file = "tiktoken-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:98d91ea78a792c28664cbc5bee81440bb17393530279b71e3216de8a82253bc2"},
+    {file = "tiktoken-0.3.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:a62a2a5d29bfe93170e59533951c687f37c90a2610ba780bcca5eec8729468c9"},
+    {file = "tiktoken-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:c57a1a61167525f4eca8c7b09ebb20e85a77f6de913a07eb6547acf60e9dbe7f"},
+    {file = "tiktoken-0.3.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:9e04bdabb9ff19a8a0100dae665df8f23838593d6ab6490790fcfe199ee4a8e5"},
+    {file = "tiktoken-0.3.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:002429fcd9b004cb3b3e859c5ebe9ea8d916a51378128ebedd2bf3bf6320401a"},
+    {file = "tiktoken-0.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1eaeeb52a79af618eac095ca91f11ba96d8b18a7e3019ecfaaaa2691838392ba"},
+    {file = "tiktoken-0.3.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:38f7c2c790cbc8f9122c8f2bcd543d385b8e5557becade29fae6de5ddba74085"},
+    {file = "tiktoken-0.3.0-cp311-cp311-win_amd64.whl", hash = "sha256:ff26fe25480a03fdd15de2dc6c33afab632d5c4deab33b054c42fa25fea98606"},
+    {file = "tiktoken-0.3.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:abc660f7da3c8b47435009ea4c428a6dd6270727a4574ee8d31514290425689b"},
+    {file = "tiktoken-0.3.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:77cc1c6cf80d2838131cad91dd0a1146e769b0797726591679feae9b20e3ebd6"},
+    {file = "tiktoken-0.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1fd12d235e57ddf0e5298aaa650b62f8d9b6269378bfe2e3e480bfe887f1ec21"},
+    {file = "tiktoken-0.3.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:3605d349903749787bf7c50a294a80a675bd988d7f4a4d077a813c4e055f8f4a"},
+    {file = "tiktoken-0.3.0-cp38-cp38-win_amd64.whl", hash = "sha256:22fd239a81609614cbcff331b14046c3d45ee53c38864d448d7fdbb1bb8b9754"},
+    {file = "tiktoken-0.3.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:38f34b23122b1a66456c8db98657a3eb5de0c2c361f35bd85dd4565c3e98edd5"},
+    {file = "tiktoken-0.3.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:0f9786a9f6242dd4f15be96a3b39d73428be847ee4a6ba196cae578bb9e9f76c"},
+    {file = "tiktoken-0.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2cdf72ffe83237a485c7e8f9a609d7d17041e1d866b5c5c424e83c82897f8ea0"},
+    {file = "tiktoken-0.3.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:9a5425409d8226e017d482120b070596450d05874e0c99c3f4e788ab9d91da64"},
+    {file = "tiktoken-0.3.0-cp39-cp39-win_amd64.whl", hash = "sha256:77650f9b4584fc26ba337c00e2d86f847acca1fa03ddf865fb1db935871c6f9e"},
+    {file = "tiktoken-0.3.0.tar.gz", hash = "sha256:2476a4f4d29293762dc3320d50d866202d7e1c562ac378a785dde51057dcef5e"},
 ]
 
 [package.dependencies]
@@ -3251,14 +3032,14 @@ files = [
 
 [[package]]
 name = "tqdm"
-version = "4.64.1"
+version = "4.65.0"
 description = "Fast, Extensible Progress Meter"
 category = "main"
 optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+python-versions = ">=3.7"
 files = [
-    {file = "tqdm-4.64.1-py2.py3-none-any.whl", hash = "sha256:6fee160d6ffcd1b1c68c65f14c829c22832bc401726335ce92c52d395944a6a1"},
-    {file = "tqdm-4.64.1.tar.gz", hash = "sha256:5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"},
+    {file = "tqdm-4.65.0-py3-none-any.whl", hash = "sha256:c4f53a17fe37e132815abceec022631be8ffe1b9381c2e6e30aa70edc99e9671"},
+    {file = "tqdm-4.65.0.tar.gz", hash = "sha256:1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5"},
 ]
 
 [package.dependencies]
@@ -3269,22 +3050,6 @@ dev = ["py-make (>=0.1.0)", "twine", "wheel"]
 notebook = ["ipywidgets (>=6)"]
 slack = ["slack-sdk"]
 telegram = ["requests"]
-
-[[package]]
-name = "traitlets"
-version = "5.9.0"
-description = "Traitlets Python configuration system"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "traitlets-5.9.0-py3-none-any.whl", hash = "sha256:9e6ec080259b9a5940c797d58b613b5e31441c2257b87c2e795c5228ae80d2d8"},
-    {file = "traitlets-5.9.0.tar.gz", hash = "sha256:f6cde21a9c68cf756af02035f72d5a723bf607e862e7be33ece505abf4a3bad9"},
-]
-
-[package.extras]
-docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
-test = ["argcomplete (>=2.0)", "pre-commit", "pytest", "pytest-mock"]
 
 [[package]]
 name = "transformers"
@@ -3500,18 +3265,6 @@ launch = ["boto3", "botocore", "chardet", "google-cloud-storage", "iso8601", "ku
 media = ["bokeh", "moviepy", "numpy", "pillow", "plotly", "rdkit-pypi", "soundfile"]
 models = ["cloudpickle"]
 sweeps = ["sweeps (>=0.2.0)"]
-
-[[package]]
-name = "wcwidth"
-version = "0.2.6"
-description = "Measures the displayed width of unicode strings in a terminal"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "wcwidth-0.2.6-py2.py3-none-any.whl", hash = "sha256:795b138f6875577cd91bba52baf9e445cd5118fd32723b460e30a0af30ea230e"},
-    {file = "wcwidth-0.2.6.tar.gz", hash = "sha256:a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"},
-]
 
 [[package]]
 name = "websockets"
@@ -3766,7 +3519,26 @@ files = [
 idna = ">=2.0"
 multidict = ">=4.0"
 
+[[package]]
+name = "zulip"
+version = "0.8.2"
+description = "Bindings for the Zulip message API"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "zulip-0.8.2-py3-none-any.whl", hash = "sha256:22ba357f55c538120eef02781faeb46a256aad4f7a1b5419889f765766cda0a5"},
+    {file = "zulip-0.8.2.tar.gz", hash = "sha256:7e3d5097feb22e912dda187cdabdebf5b2022cba95b32a43793e27abe9c52e6f"},
+]
+
+[package.dependencies]
+click = "*"
+distro = "*"
+matrix-client = "*"
+requests = {version = ">=0.12.1", extras = ["security"]}
+typing-extensions = ">=3.7"
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10,<3.12"
-content-hash = "d5a92dcf99bd98248cafe95577c62f4bd4e2084f691275abf41c7c5e1f24c0a7"
+content-hash = "6be9d56ca7b893f74fd2970bb8f81d075a2e9e35f51ba2d7d01e05a7cadaa5f0"

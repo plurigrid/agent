@@ -1,8 +1,5 @@
 from langchain import LLMChain, OpenAI, PromptTemplate
-from utils import cosmos
-
-import asyncio
-from utils import image_generator
+from agent.utils import image_generator
 
 
 class AestheticModel:

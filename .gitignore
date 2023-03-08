@@ -16,6 +16,7 @@ result-*
 # misc
 .DS_Store
 .vscode/
+**/indices/index.json
 
 # builds
 dist/
