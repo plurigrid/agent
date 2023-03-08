@@ -26,7 +26,7 @@ nix-channel --update
 
 5. In `agent/config/config.py`, set your DATA_DIR to the directory of files that you want to input to the agent.
 
-6. Run your agent, e.g. `python3 agent/agents/digital_twin.py`
+6. Run your agent, e.g. `python agent/agents/digital_twin.py`
 
 
 ## Organizational Loops
