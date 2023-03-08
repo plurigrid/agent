@@ -1,7 +1,6 @@
 import zulip
 import uuid
 from slugify import slugify
-from PIL import Image
 
 
 class ZulipUUID:
