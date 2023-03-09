@@ -1,4 +1,6 @@
 from langchain import LLMChain, PromptTemplate
+from langchain.agents.mrkl.base import ZeroShotAgent
+from agent.agents.prompt_templates.gm_agent_template import PREFIX
 from base_agent import BaseAgent
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
@@ -39,19 +41,6 @@ class DigitalTwin(BaseAgent):
 
     def build_agent(self, index):
         print("building agent..")
-        prefix = """
-                You are the user's "digital twin". Your role is to help them record their daily intentions in the morning, and summarize their day in the evening.
-                When a user says "gm", prompt them to share their intentions for the day. 
-                When a user says "gn", prompt them to share what they accomplished that day, as well as any other thoughts or reflections they might have. Then, 
-                summarize both what their intention was at the beginning of the day, and what they ended up accomplishing. 
-                Let's think step by step.
-                Good luck!"""
-
-        suffix = """Begin!"
-                {chat_history} 
-                {input}
-                Answer: 
-                {agent_scratchpad}"""
         tools = [
             Tool(
                 name="knowledge_base",
@@ -60,18 +49,10 @@ class DigitalTwin(BaseAgent):
                 return_direct=True,
             ),
         ]
-        prompt = ConversationalAgent.create_prompt(
-            tools,
-            prefix=prefix,
-            suffix=suffix,
-            input_variables=["input", "chat_history", "agent_scratchpad"],
-        )
         memory = ConversationBufferMemory(memory_key="chat_history")
-        llm_chain = LLMChain(llm=OpenAI(temperature=0), prompt=prompt)
-        agent = ConversationalAgent(llm_chain=llm_chain)
-        return AgentExecutor.from_agent_and_tools(
-            agent=agent, tools=tools, verbose=True, memory=memory
-        )
+        llm=OpenAI(temperature=0)
+        agent_kwargs = {'prefix': PREFIX}
+        return initialize_agent(tools, llm, agent="conversational-react-description", verbose=True, memory=memory, agent_kwargs=agent_kwargs)
 
     def repl(self):
         while True:
@@ -88,3 +69,4 @@ class DigitalTwin(BaseAgent):
 if __name__ == "__main__":
     agent = DigitalTwin(config.Config())
     agent.handle_message()
+    # agent.repl()

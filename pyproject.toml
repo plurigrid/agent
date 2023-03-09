@@ -7,7 +7,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10,<3.12"
-llama-index = "^0.4.15"
 pypdf2 = "^3.0.1"
 wandb = "^0.13.10"
 unstructured = "^0.4.11"
@@ -17,8 +16,8 @@ duckdb = "^0.7.0"
 pypdf = "^3.4.1"
 slugify = "^0.0.1"
 clang = "^14.0"
-langchain = "^0.0.103"
 zulip = "^0.8.2"
+llama-index = "^0.4.24"
 
 
 [build-system]
