@@ -15,8 +15,8 @@ class IndexModel:
             self.index = GPTSimpleVectorIndex.load_from_disk(index_path)
         else:
             print("initializing index, this may take a moment...")
-            print(data_dir)
-            documents = ObsidianReader(data_dir).load_data()
+            print(index_path)
+            documents = SimpleDirectoryReader(data_dir).load_data()
             index = GPTSimpleVectorIndex(documents)
             index.save_to_disk(index_path)
             self.index = index

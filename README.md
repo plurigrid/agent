@@ -22,11 +22,20 @@ nix-channel --update
 
 3. Run `poetry shell`. This will run the virtual environment that was created in the previous step.
 
-4. Set the `OPENAI_API_KEY` environment variable if accessing models by OpenAI.
+4. Retrieve an OpenAI API key. Ask in Plurigrid Zulip if you need help retrieving a key. Create a file at ~/openai.txt and paste the key in the file.
+Alternatively, you can set the OPENAI_API_KEY environment variable in your shell.
 
-5. In `agent/config/config.py`, set your DATA_DIR to the directory of files that you want to input to the agent.
+5. For running a zulip bot, you will need a ~/zuliprc.txt file. You already have a zulip bot that has been created for you, so in order to retrieve the zuliprc.txt file, go to Zulip and navigate to 'Settings' --> 'Personal Settings' --> 'Bots'. Click the green download button next to your bot and save the file to "~/zuliprc.txt".
 
-6. Run your agent, e.g. `python3 agent/agents/digital_twin.py`
+6. In `agent/config/config.py`, set your DATA_DIR to the absolute path of the  directory of files that you want to input to the agent. This should be a directory containing any notes you have (preferably Plurigrid related).
+
+7. Run your agent, e.g. `python3 agent/agents/digital_twin.py`. Make sure you run this from the root of the repo. 
+
+## Tips
+
+- To exit the poetry shell, type `exit`
+- To exit the nix shell, use `Ctrl + d`
+- If you need to reinstantiate your env, do `poetry env list` and then paste the outputted env into `poetry env remove {env-name}`. Then, run `poetry install` and `poetry shell` again to instantiate a new env. 
 
 
 ## Organizational Loops

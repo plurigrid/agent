@@ -1,6 +1,4 @@
 from langchain import LLMChain, PromptTemplate
-from agent.config.config import IndexFileType
-from agent.config.config import IndexAgentType
 from base_agent import BaseAgent
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
@@ -17,24 +15,30 @@ from langchain.chains import VectorDBQA
 from langchain.document_loaders import DirectoryLoader
 from langchain.vectorstores import Chroma
 from agent.models.index_model import IndexModel
+import os
 from llama_index import GPTListIndex, GPTIndexMemory
 
 
 class DigitalTwin(BaseAgent):
     def __init__(self, config):
         super().__init__(config)
-        if config.INDEX_FILE_TYPE != IndexFileType.MARKDOWN:
-            raise ValueError("only markdown index files are supported")
-        self.index_model = IndexModel(config.DATA_DIR, config.INDEX_PATH)
-        self.agent_type = config.INDEX_AGENT_TYPE
+        self.index_path = os.path.abspath(
+                 os.path.join(os.getcwd(), config.INDEX_PATH)
+        )
+        # read OPENAI api key from OPENAI_CONFIG_PATH file and set env var
+        openai_key_file = os.path.expanduser(config.OPENAI_CONFIG_PATH)
+        if os.path.exists(openai_key_file):
+             with open(openai_key_file) as f:
+                 openai_key = f.read().strip()
+                 os.environ['OPENAI_API_KEY'] = openai_key
+        
+        # Construct index 
+        self.index_model = IndexModel(config.DATA_DIR, self.index_path)
         index = self.index_model.get_index()
-        if self.agent_type == IndexAgentType.MEMORY:
-            self.agent_chain = self.build_memory_agent(index)
-        else:
-            self.agent_chain = self.build_tool_agent(index)
+        self.agent_chain = self.build_agent(index)
 
-    def build_tool_agent(self, index):
-        print("building tool agent..")
+    def build_agent(self, index):
+        print("building agent..")
         prefix = """
                 You are the user's "digital twin". Your role is to help them record their daily intentions in the morning, and summarize their day in the evening.
                 When a user says "gm", prompt them to share their intentions for the day. 
@@ -67,18 +71,6 @@ class DigitalTwin(BaseAgent):
         agent = ConversationalAgent(llm_chain=llm_chain)
         return AgentExecutor.from_agent_and_tools(
             agent=agent, tools=tools, verbose=True, memory=memory
-        )
-
-    def build_memory_agent(self, index):
-        print("building memory agent..")
-        memory = GPTIndexMemory(
-            index=index,
-            memory_key="chat_history",
-            query_kwargs={"response_mode": "compact"},
-        )
-        llm = OpenAI(temperature=0)
-        return initialize_agent(
-            [], llm, agent="conversational-react-description", memory=memory
         )
 
     def repl(self):
