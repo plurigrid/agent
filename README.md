@@ -27,9 +27,12 @@ Alternatively, you can set the OPENAI_API_KEY environment variable in your shell
 
 5. For running a zulip bot, you will need a ~/zuliprc.txt file. You already have a zulip bot that has been created for you, so in order to retrieve the zuliprc.txt file, go to Zulip and navigate to 'Settings' --> 'Personal Settings' --> 'Bots'. Click the green download button next to your bot and save the file to "~/zuliprc.txt".
 
-6. In `agent/config/config.py`, set your DATA_DIR to the absolute path of the  directory of files that you want to input to the agent. This should be a directory containing any notes you have (preferably Plurigrid related).
+6. In `agent/config/config.py`, set your DATA_DIR to the absolute path of the  directory of files that you want to input to the agent. This should be a directory containing any notes or thoughts you have (preferably Plurigrid related).
 
 7. Run your agent, e.g. `python3 agent/agents/digital_twin.py`. Make sure you run this from the root of the repo. 
+
+8. If all has gone well, you can now interact with your bot by tagging it in 
+the Plurigrid zulip and asking it questions.
 
 ## Tips
 
