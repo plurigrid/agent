@@ -17,6 +17,7 @@ result-*
 .DS_Store
 .vscode/
 **/indices/index.json
+**/.chroma/
 
 # builds
 dist/

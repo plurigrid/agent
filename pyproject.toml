@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Plurigrid <gm@plurigrid.xyz>"]
 readme = "README.md"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10,<3.12"
@@ -19,7 +20,8 @@ clang = "^14.0"
 zulip = "^0.8.2"
 llama-index = "^0.4.24"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
