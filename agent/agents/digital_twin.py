@@ -19,6 +19,7 @@ from langchain.vectorstores import Chroma
 from agent.models.index_model import IndexModel
 import os
 from llama_index import GPTListIndex, GPTIndexMemory
+import gradio
 
 
 class DigitalTwin(BaseAgent):
@@ -54,19 +55,25 @@ class DigitalTwin(BaseAgent):
         agent_kwargs = {'prefix': PREFIX}
         return initialize_agent(tools, llm, agent="conversational-react-description", verbose=True, memory=memory, agent_kwargs=agent_kwargs)
 
-    def repl(self):
-        while True:
-            user_input = input(">>> ")
-            print(self.agent_chain.run(user_input))
-
     def respond_to_message(self, msg):
         stream = msg["stream_id"]
         topic = msg["subject"]
         output = self.agent_chain.run(msg["content"])
         result = self.client.send_message("stream", stream, topic, output)
+        
+    def repl(self):
+            while True:
+                user_input = input(">>> ")
+                print(self.agent_chain.run(user_input))
 
+    def gradio(self):
+        iface = gradio.Interface(fn=self.agent_chain.run, 
+                             inputs=gradio.inputs.Textbox(label="question"), 
+                             outputs="text",
+                             title="Digital Twin",
+                             description="Ask anything!")
+        iface.launch(share = True)
 
 if __name__ == "__main__":
     agent = DigitalTwin(config.Config())
     agent.handle_message()
-    # agent.repl()
