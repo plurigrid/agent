@@ -13,6 +13,7 @@ pkgs.mkShell {
     gcc
     nodejs
     tree
+    sl
     libxml2
     libxslt
   ];
