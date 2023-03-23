@@ -1,7 +1,11 @@
-from agent.agents.prompt_templates.play_coplay_template import PLAY_COPLAY_PROMPT
+from agent.agents.prompt_templates.play_coplay_template import (
+    CHAT_PROMPT,
+    PLAY_COPLAY_PROMPT,
+)
 from agent.agents.base_agent import BaseAgent
 from langchain.agents import initialize_agent
 from langchain.llms import OpenAI
+from langchain.chains import LLMChain
 from langchain.agents import Tool
 from agent.config import config
 from langchain.chains.conversation.memory import ConversationBufferMemory
@@ -9,13 +13,6 @@ from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 from agent.models.index_model import IndexModel
 import gradio
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    SystemMessagePromptTemplate,
-    AIMessagePromptTemplate,
-    HumanMessagePromptTemplate,
-)
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from agent.models.tasks_json_model import TasksJsonModel
 
 
@@ -42,15 +39,8 @@ class PlayCoplayAgent(BaseAgent):
             memory_key="chat_history", return_messages=True
         )
         llm = ChatOpenAI(temperature=0, model_name="gpt-4")
-        agent_kwargs = {"prefix": prompt}
-        return initialize_agent(
-            tools,
-            llm,
-            agent="chat-conversational-react-description",
-            verbose=True,
-            memory=memory,
-            agent_kwargs=agent_kwargs,
-        )
+        # agent_kwargs = {"prefix": prompt}
+        return LLMChain(llm=llm, prompt=CHAT_PROMPT)
 
     def handle_input(self, msg):
         return self.agent_chain.run(msg)
