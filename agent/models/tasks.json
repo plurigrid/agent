@@ -1,24 +1,32 @@
 {
-    "tasks": [
-        {
-            "name": "Janita",
-            "task_list": [
-                {
-                    "id": 1,
-                    "task": "Reconcile bank statements",
-                    "due_date": "2023-03-28"
-                },
-                {
-                    "id": 2,
-                    "task": "Prepare financial reports",
-                    "due_date": "2023-03-31"
-                },
-                {
-                    "id": 4,
-                    "task": "File tax returns",
-                    "due_date": "2023-04-15"
-                }
-            ]
-        }
-    ]
+    "tasks": {
+        "janita": [
+            {
+                "id": 1,
+                "task": "Reconcile bank statements",
+                "due_date": "2023-03-28",
+                "status": "in-progress"
+            },
+            {
+                "id": 2,
+                "task": "Prepare financial reports",
+                "due_date": "2023-03-31",
+                "status": "not-started"
+            },
+            {
+                "id": 4,
+                "task": "File tax returns",
+                "due_date": "2023-04-15",
+                "status": "done"
+            }
+        ],
+        "alik": [
+            {
+                "id": 1,
+                "task": "Get feedback from Bobo",
+                "due_date": "2023-03-28",
+                "status": "in-progress"
+            }
+        ]
+    }
 }

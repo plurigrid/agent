@@ -16,7 +16,7 @@ from agent.config import config
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.chat_models import ChatOpenAI
 import gradio
-from agent.models.tasks_json_model import TasksJsonModel
+from agent.models.tasks_model import TasksModel
 
 
 class PlayCoplayAgent(BaseAgent):
@@ -25,7 +25,7 @@ class PlayCoplayAgent(BaseAgent):
         self.agent_chain = self.build_agent()
 
     def build_agent(self):
-        task_model = TasksJsonModel()
+        task_model = TasksModel()
         memory = ConversationBufferMemory(
             memory_key="chat_history", return_messages=True
         )
@@ -33,8 +33,8 @@ class PlayCoplayAgent(BaseAgent):
             Tool(
                 name="tasks_json_loader",
                 func=lambda name: str(task_model.get_tasks(name)),
-                description="Useful for when you want to load tasks for a player. The input to this tool should be a single english word.",
-                return_direct=True,
+                description="Useful for when you want to load a user's tasks in JSON format. The input to this tool should be a name.",
+                return_direct=False,
             ),
         ]
         tool_names = [tool.name for tool in tools]
@@ -43,11 +43,9 @@ class PlayCoplayAgent(BaseAgent):
             human_message=PLAY_COPLAY_PROMPT_SUFFIX,
             tools=tools,
         )
-
         llm_chain = LLMChain(
             llm=ChatOpenAI(temperature=0, model_name="gpt-4"), prompt=prompt
         )
-
         agent = ConversationalChatAgent(
             llm_chain=llm_chain,
             allowed_tools=tool_names,
