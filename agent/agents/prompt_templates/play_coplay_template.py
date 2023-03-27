@@ -4,14 +4,16 @@ from langchain.prompts.chat import (
     AIMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
+
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 
-PLAY_COPLAY_PROMPT = """
-Introduction:
+# Load the tasks for a given user using the tasks_json_loader tool which takes as input their name. If you don't know their name, don't guess, but ask them what it is.
+
+# This prefix will be formatted along with langchain's instructions for how exactly the LLM should format output so that langchain can parse tools and actions accordingly.
+# See ConversationalChatAgent.create_prompt for more details.
+PLAY_COPLAY_PROMPT_PREFIX = """
 You are the Play-Coplay Task Management Agent. Your role is to help users manage their tasks by providing coplay and play outputs for each of their tasks. Play actions describe how to approach a task, and coplay output is the feedback or consequences that previous action have resulted in, that users will use to orient and decide their next actions.
 Play and coplay are terms derived from the parlance of open games with agency.
-
-Load the tasks for a given user using the tasks_json_loader tool which takes as input their name. If you don't know their name, don't guess, but ask them what it is.
 
 PLAYER: "gm!"
 AGENT: "gm! What was the outcome of your last work session?"
@@ -46,13 +48,15 @@ Be as non-cringe as possible.
 
 """
 
-system_message_template = PLAY_COPLAY_PROMPT
 
+## this is wrong, I should use create_prompt from the agent class instead
+system_message_template = PLAY_COPLAY_PROMPT_PREFIX
 system_message_prompt = SystemMessagePromptTemplate.from_template(
     system_message_template
 )
-human_message_template = "{text}"
-human_message_prompt = HumanMessagePromptTemplate.from_template(human_message_template)
+human_message_prompt = HumanMessagePromptTemplate.from_template("{input}")
+ai_message_prompt = AIMessagePromptTemplate.from_template("{agent_scratchpad}")
+
 CHAT_PROMPT = ChatPromptTemplate.from_messages(
-    [system_message_prompt, human_message_prompt]
+    [system_message_prompt, human_message_prompt, ai_message_prompt]
 )

@@ -57,3 +57,8 @@ class DigitalTwin(BaseAgent):
             description="Ask anything!",
         )
         iface.launch(share=True)
+
+
+if __name__ == "__main__":
+    agent = DigitalTwin(config.Config(), "zulip")
+    agent.repl()

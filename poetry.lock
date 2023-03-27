@@ -1452,29 +1452,31 @@ files = [
 
 [[package]]
 name = "langchain"
-version = "0.0.106"
+version = "0.0.123"
 description = "Building applications with LLMs through composability"
 category = "main"
 optional = false
 python-versions = ">=3.8.1,<4.0"
-files = [
-    {file = "langchain-0.0.106-py3-none-any.whl", hash = "sha256:4e340383853c5c5098b0d22c2cb2bb6022fefdbafa239f3e69f3c8caa35db2c7"},
-    {file = "langchain-0.0.106.tar.gz", hash = "sha256:d15325e1d8e6d4a05c248533dc859bb995de46e8e683f13ffe90935fadba354e"},
-]
+files = []
+develop = false
 
 [package.dependencies]
-aiohttp = ">=3.8.3,<4.0.0"
-dataclasses-json = ">=0.5.7,<0.6.0"
-numpy = ">=1,<2"
-pydantic = ">=1,<2"
-PyYAML = ">=6,<7"
-requests = ">=2,<3"
-SQLAlchemy = ">=1,<2"
-tenacity = ">=8.1.0,<9.0.0"
+aiohttp = "^3.8.3"
+dataclasses-json = "^0.5.7"
+numpy = "^1"
+pydantic = "^1"
+PyYAML = ">=5.4.1"
+requests = "^2"
+SQLAlchemy = "^1"
+tenacity = "^8.1.0"
 
 [package.extras]
-all = ["aleph-alpha-client (>=2.15.0,<3.0.0)", "anthropic (>=0.2.2,<0.3.0)", "beautifulsoup4 (>=4,<5)", "cohere (>=3,<4)", "deeplake (>=3.2.9,<4.0.0)", "elasticsearch (>=8,<9)", "faiss-cpu (>=1,<2)", "google-api-python-client (==2.70.0)", "google-search-results (>=2,<3)", "huggingface_hub (>=0,<1)", "jinja2 (>=3,<4)", "manifest-ml (>=0.0.1,<0.0.2)", "networkx (>=2.6.3,<3.0.0)", "nlpcloud (>=1,<2)", "nltk (>=3,<4)", "nomic (>=1.0.43,<2.0.0)", "openai (>=0,<1)", "opensearch-py (>=2.0.0,<3.0.0)", "pinecone-client (>=2,<3)", "pypdf (>=3.4.0,<4.0.0)", "qdrant-client (>=1.0.4,<2.0.0)", "redis (>=4,<5)", "sentence-transformers (>=2,<3)", "spacy (>=3,<4)", "tensorflow-text (>=2.11.0,<3.0.0)", "tiktoken (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)", "weaviate-client (>=3,<4)", "wikipedia (>=1,<2)", "wolframalpha (==5.0.0)"]
+all = ["aleph-alpha-client (>=2.15.0,<3.0.0)", "anthropic (>=0.2.2,<0.3.0)", "beautifulsoup4 (>=4,<5)", "cohere (>=3,<4)", "deeplake (>=3.2.9,<4.0.0)", "elasticsearch (>=8,<9)", "faiss-cpu (>=1,<2)", "google-api-python-client (==2.70.0)", "google-search-results (>=2,<3)", "huggingface_hub (>=0,<1)", "jinja2 (>=3,<4)", "manifest-ml (>=0.0.1,<0.0.2)", "networkx (>=2.6.3,<3.0.0)", "nlpcloud (>=1,<2)", "nltk (>=3,<4)", "nomic (>=1.0.43,<2.0.0)", "openai (>=0,<1)", "opensearch-py (>=2.0.0,<3.0.0)", "pgvector (>=0.1.6,<0.2.0)", "pinecone-client (>=2,<3)", "psycopg2-binary (>=2.9.5,<3.0.0)", "pypdf (>=3.4.0,<4.0.0)", "qdrant-client (>=1.0.4,<2.0.0)", "redis (>=4,<5)", "sentence-transformers (>=2,<3)", "spacy (>=3,<4)", "tensorflow-text (>=2.11.0,<3.0.0)", "tiktoken (>=0.3.2,<0.4.0)", "torch (>=1,<2)", "transformers (>=4,<5)", "weaviate-client (>=3,<4)", "wikipedia (>=1,<2)", "wolframalpha (==5.0.0)"]
 llms = ["anthropic (>=0.2.2,<0.3.0)", "cohere (>=3,<4)", "huggingface_hub (>=0,<1)", "manifest-ml (>=0.0.1,<0.0.2)", "nlpcloud (>=1,<2)", "openai (>=0,<1)", "torch (>=1,<2)", "transformers (>=4,<5)"]
+
+[package.source]
+type = "directory"
+url = "../../../code/langchain"
 
 [[package]]
 name = "linkify-it-py"
@@ -3914,4 +3916,4 @@ typing-extensions = ">=3.7"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10,<3.12"
-content-hash = "17a986233b3105e614836d9972565aa4d33fa1f6ef38c9e0364c30e6b4f7de0e"
+content-hash = "8a3ce1edb41a05ca258f1198721be45fb7ff8582307f1938e6f7dd585d3aad3c"

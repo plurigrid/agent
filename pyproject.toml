@@ -22,6 +22,7 @@ llama-index = "^0.4.24"
 argparse = "^1.4.0"
 discord = "^2.2.2"
 pygithub = "^1.58.1"
+langchain = { path = "/Users/janitachalam/code/langchain" }
 
 [tool.poetry.scripts]
 agent = "agent.main:run"
