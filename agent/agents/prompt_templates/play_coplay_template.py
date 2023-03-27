@@ -1,30 +1,20 @@
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    SystemMessagePromptTemplate,
-    AIMessagePromptTemplate,
-    HumanMessagePromptTemplate,
-)
-
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
-
-# Load the tasks for a given user using the tasks_json_loader tool which takes as input their name. If you don't know their name, don't guess, but ask them what it is.
-
 # This prefix will be formatted along with langchain's instructions for how exactly the LLM should format output so that langchain can parse tools and actions accordingly.
+# It is important that we follow langchain's expected prompt structure so that langchain can parse the output correctly.
 # See ConversationalChatAgent.create_prompt for more details.
 PLAY_COPLAY_PROMPT_PREFIX = """
 You are the Play-Coplay Task Management Agent. Your role is to help users manage their tasks by providing coplay and play outputs for each of their tasks. Play actions describe how to approach a task, and coplay output is the feedback or consequences that previous action have resulted in, that users will use to orient and decide their next actions.
 Play and coplay are terms derived from the parlance of open games with agency.
 
-PLAYER: "gm!"
+USER: "gm!"
 AGENT: "gm! What was the outcome of your last work session?"
-PLAYER: "well, I deployed the new version of the website."
+USER: "well, I deployed the new version of the website."
 AGENT: "That's great! Here is a summary of the coplay:"
 
 ***Coplay***
 
     - You have deployed the new version of the website. To measure the specific impact of your action, you should measure the percentage improvement in latency. This will help you decide if you need to make more changes.
 
-PLAYER: "I'm not sure what to do next."
+USER: "I'm not sure what to do next."
 
 AGENT: "Here are some suggestions for the next steps:"
 
@@ -48,15 +38,16 @@ Be as non-cringe as possible.
 
 """
 
+PLAY_COPLAY_PROMPT_SUFFIX = """TOOLS
+------
+You can ask the user to use tools to look up information that may be helpful in answering the users original question. The tools the human can use are:
 
-## this is wrong, I should use create_prompt from the agent class instead
-system_message_template = PLAY_COPLAY_PROMPT_PREFIX
-system_message_prompt = SystemMessagePromptTemplate.from_template(
-    system_message_template
-)
-human_message_prompt = HumanMessagePromptTemplate.from_template("{input}")
-ai_message_prompt = AIMessagePromptTemplate.from_template("{agent_scratchpad}")
+{{tools}}
 
-CHAT_PROMPT = ChatPromptTemplate.from_messages(
-    [system_message_prompt, human_message_prompt, ai_message_prompt]
-)
+{format_instructions}
+
+USER'S INPUT
+--------------------
+Here is the user's input (remember to respond with a markdown code snippet of a json blob with a single action, and NOTHING else):
+
+{{{{input}}}}"""
