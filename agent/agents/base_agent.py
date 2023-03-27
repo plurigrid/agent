@@ -1,15 +1,19 @@
 from abc import ABC, abstractmethod
-from agent.utils import zulip
+from agent.utils import gradio, repl, zulip
 from agent.utils import discord
 
 
 class BaseAgent(ABC):
-    def __init__(self, config, bot_type):
-        self.bot_type = bot_type
-        if bot_type == "zulip":
+    def __init__(self, config, mode):
+        self.mode = mode
+        if mode == "zulip":
             self.client = zulip.ZulipClient(config, self.handle_input)
-        elif bot_type == "discord":
+        elif mode == "discord":
             self.client = discord.DiscordClient(self.handle_input)
+        elif mode == "repl":
+            self.client = repl.Repl(self.handle_input)
+        elif mode == "gradio":
+            self.client = gradio.Gradio(self.handle_input)
         else:
             raise ValueError("Invalid bot_type")
 

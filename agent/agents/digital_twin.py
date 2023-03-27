@@ -11,9 +11,8 @@ import gradio
 
 
 class DigitalTwin(BaseAgent):
-    def __init__(self, config, bot_type, prompt=PROMPT):
-        super().__init__(config, bot_type)
-        # Construct index
+    def __init__(self, config, mode, prompt=PROMPT):
+        super().__init__(config, mode)
         self.index_model = IndexModel(config)
         index = self.index_model.get_index()
         self.agent_chain = self.build_agent(index, prompt)

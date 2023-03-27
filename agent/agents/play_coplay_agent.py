@@ -15,13 +15,12 @@ from langchain.agents import Tool
 from agent.config import config
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.chat_models import ChatOpenAI
-import gradio
 from agent.models.tasks_model import TasksModel
 
 
 class PlayCoplayAgent(BaseAgent):
-    def __init__(self, config, bot_type):
-        super().__init__(config, bot_type)
+    def __init__(self, config, mode):
+        super().__init__(config, mode)
         self.agent_chain = self.build_agent()
 
     def build_agent(self):
@@ -44,7 +43,7 @@ class PlayCoplayAgent(BaseAgent):
             tools=tools,
         )
         llm_chain = LLMChain(
-            llm=ChatOpenAI(temperature=0, model_name="gpt-4"), prompt=prompt
+            llm=ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo"), prompt=prompt
         )
         agent = ConversationalChatAgent(
             llm_chain=llm_chain,
@@ -58,23 +57,8 @@ class PlayCoplayAgent(BaseAgent):
     def handle_input(self, msg):
         return self.agent_chain.run(msg)
 
-    def repl(self):
-        while True:
-            user_input = input(">>> ")
-            print(self.agent_chain.run(user_input))
-
-    def gradio(self):
-        iface = gradio.Interface(
-            fn=self.agent_chain.run,
-            inputs=gradio.inputs.Textbox(label="..."),
-            outputs="text",
-            title="Play-Coplay Agent",
-            description="GM!",
-        )
-        iface.launch(share=True)
-
 
 if __name__ == "__main__":
     config = config.Config()
-    agent = PlayCoplayAgent(config, "zulip")
+    agent = PlayCoplayAgent(config, "repl")
     agent.repl()

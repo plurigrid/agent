@@ -23,6 +23,8 @@ argparse = "^1.4.0"
 discord = "^2.2.2"
 pygithub = "^1.58.1"
 langchain = { path = "/Users/janitachalam/code/langchain" }
+torch = "^2.0.0"
+sentencepiece = "^0.1.97"
 
 [tool.poetry.scripts]
 agent = "agent.main:run"
