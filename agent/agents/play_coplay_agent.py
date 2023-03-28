@@ -43,7 +43,7 @@ class PlayCoplayAgent(BaseAgent):
             tools=tools,
         )
         llm_chain = LLMChain(
-            llm=ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo"), prompt=prompt
+            llm=ChatOpenAI(temperature=0, model_name="gpt-4"), prompt=prompt
         )
         agent = ConversationalChatAgent(
             llm_chain=llm_chain,
