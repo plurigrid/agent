@@ -71,6 +71,8 @@ You can ask the user to use tools to look up information that may be helpful in 
 
 {{tools}}
 
+If you don't know a user's name to input to the tool, don't make something up, instead ask them for their name.
+
 {format_instructions}
 
 USER'S INPUT
