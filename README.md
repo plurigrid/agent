@@ -1,7 +1,5 @@
 # Agent
 
-The Agent is a conversational assistant designed to help team members in organizations establish a shared information context and work more efficiently together. The agent is built using Python and langchain.
-
 
 ## Setup and Installation
 
@@ -16,24 +14,23 @@ nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 ```
 
-## Easiest: Running the agent with 'just'
+## Running with 'just'
 
 1. If it's the first time running after pulling changes, run "just install" to install all dependencies.
-2. Then, run "just play {gradio, repl}" to start the agent.
+2. Set the OPENAI_API_KEY environment variable in your shell.
+3. For the play-coplay agent, run `just play {gradio, repl, zulip, discord}`. (This will start nix and poetry shell and the agent for you.)
+4. To summon a digital twin, run `just summon {bartonus, ianita, luke, agatha, andreus} {gradio, repl}`.
+5. To start an ontology agent, run `just ontology {gradio, repl}`. This will load the digital twin from the prompt you input, and it can also answer questions over the knowledge base you provide. Protip: make sure the knowledge base does not have nested directories. scripts/copy_files_flat.sh can help with this.
 
-## Running the agent as a zulip or discord bot
+## Extra configuration for running in zulip or discord
 
-1. Set the OPENAI_API_KEY environment variable in your shell.
+1. The agent_config.json file in this directory is a sample configuration file. Copy it to ~/agent_config.json.
 
-2. The agent_config.json file in this directory is a sample configuration file. Copy it to ~/agent_config.json (aka, your home directory) and set the DATA_DIR variable in that file to the absolute path of the directory of files that you want to input to the agent. This should be a directory containing any notes or thoughts you have about Plurigrid. Don't include any nested directories, all files should be at the top level. (# NOTE: THIS WILL SOON BE AUGMENTED WITH SUMMONING SPELLS)
+2. If you want to the agent's index to be constructed from channels on a discord server, add the relevant discord channel IDs to the `CHANNEL_IDS` variable in agent_config.json. Make sure you set the INDEX_MODE variable to either "discord" or "directory". In order for the channels to be read, you need to set the `DISCORD_TOKEN` environment variable to your discord bot's API key.
 
-3. If you instead want to the agent's index to be constructed from channels on a discord server, add the relevant discord channel IDs to the `CHANNEL_IDS` variable in agent_config.json. Make sure you set the INDEX_MODE variable to either "discord" or "directory". In order for the channels to be read, you need to set the `DISCORD_TOKEN` environment variable to your discord bot's API key.
+3. If running a zulip agent, you will also need a zulip bot API key. Go to Zulip and navigate to 'Settings' --> 'Personal Settings' --> 'Bots'. Download the .zuliprc file and copy it to ~/.zuliprc.
 
-5. If running a zulip bot, you will also need a zulip bot API key. You already have a bot created for you, so go to Zulip and navigate to 'Settings' --> 'Personal Settings' --> 'Bots'. Download the zuliprc file. Copy the api key and use it to set the `ZULIP_API_KEY` environment variable in your shell. Then, in ~/agent_config.json, set the BOT_EMAIL variable to your bot's email address. Set the SERVER_URL variable to the zulip server url. (This is because you are trying to separate API keys from other text configurations.)
-
-5.5. If running a discord bot, you will need to set the `DISCORD_TOKEN` environment variable to your bot's API key.
-
-7. Run your agent and indicate which mode you want: `just play {repl, gradio, zulip, discord}`. Make sure you run this command from the root of the repo.
+4. If running in discord, you will need to set the `DISCORD_TOKEN` environment variable to your bot's API key.
 
 
 ## Tips

@@ -18,6 +18,6 @@
     "index": {
         "INDEX_MODE": "<discord_or_directory>",
         "INDEX_PATH": "agent/indices/index.json",
-        "DATA_DIR": "<path_to_directory_containing_documents_to_index"
+        "DATA_DIR": "<path_to_directory_containing_documents_to_index>"
     }
 }

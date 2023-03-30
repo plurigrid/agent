@@ -55,5 +55,4 @@ class IndexModel:
         return self.index
 
     def query(self, question):
-        print("question received: ", question)
         return self.index.query(question)
