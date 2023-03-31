@@ -92,7 +92,7 @@ import configparser
 
 class ZulipClient:
     def __init__(self, msg_handler):
-        config_path = os.path.expanduser("~/.zuliprc")
+        config_path = os.path.expanduser("~/zuliprc")
         if not os.path.exists(config_path):
             raise ValueError(f"Configuration file not found at: {config_path}")
 
@@ -103,12 +103,16 @@ class ZulipClient:
         bot_email = config.get("api", "email", fallback=None)
         server_url = config.get("api", "site", fallback=None)
 
+        print(bot_key)
+        print(bot_email)
+        print(server_url)
+
         if bot_email is None:
             raise ValueError("BOT_EMAIL config variable not set.")
         if server_url is None:
             raise ValueError("SERVER_URL config variable not set.")
         if bot_key is None:
-            raise ValueError("ZULIP_API_KEY environment variable not set.")
+            raise ValueError("ZULIP_API_KEY config ariable not set.")
 
         self.client = zulip.Client(api_key=bot_key, email=bot_email, site=server_url)
         self.msg_handler = msg_handler
@@ -129,6 +133,7 @@ class ZulipClient:
         return self.client.send_message(request)
 
     def respond_to_message(self, msg, msg_handler):
+        print(msg)
         stream = msg["stream_id"]
         topic = msg["subject"]
         output = msg_handler(msg["content"])
