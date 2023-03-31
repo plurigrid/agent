@@ -71,7 +71,7 @@ class OntologyAgent(BaseAgent):
             streaming=True,
             temperature=0,
             # model_name="gpt-4",
-            callback_manager=AsyncCallbackManager(streaming_handler),
+            callback_manager=AsyncCallbackManager([streaming_handler]),
         )
         agent = ConversationalChatAgent.from_llm_and_tools(
             llm=llm,
@@ -79,7 +79,11 @@ class OntologyAgent(BaseAgent):
             output_parser=AgentOutputParser(),
         )
         chain = AgentExecutor.from_agent_and_tools(
-            agent=agent, tools=tools, verbose=True, memory=memory
+            agent=agent,
+            tools=tools,
+            verbose=True,
+            memory=memory,
+            manager=AsyncCallbackManager([]),
         )
         self.agent_chain = chain
         return chain
@@ -89,4 +93,4 @@ class OntologyAgent(BaseAgent):
 
 
 if __name__ == "__main__":
-    agent = OntologyAgent(config.Config(), "repl")
+    agent = OntologyAgent(config.Config(), "fastapi")

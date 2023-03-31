@@ -15,7 +15,8 @@ class BaseAgent(ABC):
         elif mode == "gradio":
             self.client = gradio.Gradio(self.handle_input)
         elif mode == "fastapi":
-            self.client = fastapi.App(self.get_chain)
+            fastapi.app_state = fastapi.AppState(chain_handler=self.get_chain)
+            fastapi.run()
         else:
             raise ValueError("Invalid agent mode")
 

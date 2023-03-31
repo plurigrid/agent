@@ -6,7 +6,7 @@ summon mode=default_mode:
     nix-shell --run "poetry run python3 -m agent --agent digital_twin --mode {{mode}}"
 
 ontology knowledge-base mode="repl": 
-    nix-shell --run "poetry run python3 -m agent --agent ontology --mode {{mode}} --path {{knowledge-base}}"
+    python3 -m agent --agent ontology --mode {{mode}} --path {{knowledge-base}}
 
 install:
     nix-shell --run "poetry install"

@@ -11,7 +11,7 @@ class StreamingLLMCallbackHandler(AsyncCallbackHandler):
         self.websocket = websocket
 
     async def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
-        resp = ChatResponse(sender="bot", message=token, type="stream")
+        resp = ChatResponse(sender="agent", message=token, type="stream")
         await self.websocket.send_json(resp.dict())
 
 
@@ -26,6 +26,6 @@ class QuestionGenCallbackHandler(AsyncCallbackHandler):
     ) -> None:
         """Run when LLM starts running."""
         resp = ChatResponse(
-            sender="bot", message="Synthesizing question...", type="info"
+            sender="agent", message="Synthesizing question...", type="info"
         )
         await self.websocket.send_json(resp.dict())
