@@ -15,18 +15,20 @@ from langchain.chains.conversation.memory import ConversationBufferMemory
 class DigitalTwin(BaseAgent):
     def __init__(self, config, mode, prompt=None):
         super().__init__(config, mode)
+        self.agent_chain = self.build_agent(prompt)
 
-    def build_agent(self):
+    def build_agent(self, prompt):
         print("building agent..")
         memory = ConversationBufferMemory(
             memory_key="chat_history", return_messages=True
         )
         llm = ChatOpenAI(temperature=0, model_name="gpt-4")
         tools = []
+        kwargs = {}
+        if prompt is not None:
+            kwargs["system_message"] = prompt
         agent = ConversationalChatAgent.from_llm_and_tools(
-            llm=llm,
-            tools=tools,
-            output_parser=AgentOutputParser(),
+            llm=llm, tools=tools, output_parser=AgentOutputParser(), **kwargs
         )
         return AgentExecutor.from_agent_and_tools(
             agent=agent, tools=tools, verbose=True, memory=memory

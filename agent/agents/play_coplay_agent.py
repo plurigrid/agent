@@ -10,7 +10,6 @@ from langchain.agents.conversational_chat.base import (
 from langchain.agents import Tool, AgentExecutor
 from langchain.chains import LLMChain
 from langchain.agents import Tool
-from agent.config import config
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.chat_models import ChatOpenAI
 from agent.models.tasks_model import TasksModel
@@ -57,6 +56,4 @@ class PlayCoplayAgent(BaseAgent):
 
 
 if __name__ == "__main__":
-    config = config.Config()
-    agent = PlayCoplayAgent(config, "repl")
-    agent.repl()
+    agent = PlayCoplayAgent("repl")

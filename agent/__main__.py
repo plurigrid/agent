@@ -15,13 +15,18 @@ def run():
     )
     parser.add_argument(
         "--mode",
-        choices=["zulip", "discord", "repl", "gradio", "fastapi"],
+        choices=["zulip", "discord", "repl", "gradio"],
         help="Specify the mode to run in",
         required=True,
     )
     parser.add_argument(
         "--path",
         help="Specify the path to a knowledge base to index",
+        required=False,
+    )
+    parser.add_argument(
+        "--prompt",
+        help="Specify the path to a prompt for summoning",
         required=False,
     )
     args = parser.parse_args()
@@ -34,7 +39,11 @@ def run():
         c.set("DATA_DIR", args.path)
         agent = OntologyAgent(c, mode=args.mode)
     elif args.agent == "digital_twin":
-        agent = DigitalTwin(config.Config(), mode=args.mode)
+        if args.prompt is None:
+            raise ValueError("Must specify a prompt")
+        with open(args.prompt, "r") as file:
+            prompt_content = file.read()
+        agent = DigitalTwin(config.Config(), mode=args.mode, prompt=prompt_content)
     else:
         raise ValueError(f"Invalid agent: {args.agent}")
     agent.run()
