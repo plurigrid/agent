@@ -1,0 +1,177 @@
+{
+    "tasks": {
+        "barton": [
+            {
+                "id": 1,
+                "task": "Prepared and sent offer agreements (excluding Aja and Janita)",
+                "status": "done"
+            },
+            {
+                "id": 2,
+                "task": "Prepare and send offer agreements for Aja and Janita",
+                "status": "not-started"
+            },
+            {
+                "id": 3,
+                "task": "Onboard new team members Kenneth and Jonny",
+                "status": "upcoming"
+            },
+            {
+                "id": 4,
+                "task": "Refine the Plurigrid Protocol Paper",
+                "status": "upcoming"
+            },
+            {
+                "id": 5,
+                "task": "Enhance technical infrastructure and tools",
+                "status": "upcoming"
+            },
+            {
+                "id": 6,
+                "task": "Develop and strengthen collaborations",
+                "status": "other"
+            },
+            {
+                "id": 7,
+                "task": "Conduct research and development",
+                "status": "other"
+            },
+            {
+                "id": 8,
+                "task": "Manage funding and investor relations",
+                "status": "other"
+            },
+            {
+                "id": 9,
+                "task": "Improve the website and directory",
+                "status": "other"
+            },
+            {
+                "id": 10,
+                "task": "Pick a book for Barton <> Aja Play / Coplay",
+                "status": "upcoming"
+            },
+            {
+                "id": 11,
+                "task": "Eat lunch (Next Barton <> Aja Play / Coplay)",
+                "status": "other"
+            }
+        ],
+        "janita": [
+            {
+                "id": 12,
+                "task": "Task planning and prioritization",
+                "status": "done"
+            },
+            {
+                "id": 13,
+                "task": "Creating an inspirational playlist",
+                "status": "done"
+            },
+            {
+                "id": 14,
+                "task": "Address deployment issue: nix-build fails at pipBuildPhase (Plurigrid/agent/issues/11)",
+                "status": "next"
+            },
+            {
+                "id": 15,
+                "task": "Gather additional resources and knowledge",
+                "status": "upcoming"
+            },
+            {
+                "id": 16,
+                "task": "Continue collaborating and growing in the shared arena",
+                "status": "upcoming"
+            },
+            {
+                "id": 17,
+                "task": "Monitor progress and adjust plans as needed",
+                "status": "other"
+            }
+        ],
+        "aja": [
+            {
+                "id": 1,
+                "task": "Explored smart meter data, power line communication, WebAssembly runtimes, and hardware options",
+                "status": "done"
+            },
+            {
+                "id": 2,
+                "task": "Create an onboarding guide with software and device management disclosure policies",
+                "status": "next"
+            },
+            {
+                "id": 3,
+                "task": "Consult with experts on power transmission theory",
+                "status": "upcoming"
+            },
+            {
+                "id": 4,
+                "task": "Continue exploring different WebAssembly runtimes and trade-offs",
+                "status": "upcoming"
+            },
+            {
+                "id": 5,
+                "task": "Further investigate smart meter capabilities and security",
+                "status": "other"
+            },
+            {
+                "id": 6,
+                "task": "Keep up-to-date on advancements in power line communication",
+                "status": "other"
+            },
+            {
+                "id": 7,
+                "task": "Investigate sending power across a local network",
+                "status": "other"
+            }
+        ],
+        "lucas": [
+            {
+                "id": 8,
+                "task": "Officially joined the team with adjusted role, incentives, and expectations",
+                "status": "done"
+            },
+            {
+                "id": 9,
+                "task": "Develop a clear and concise stakeholder engagement plan",
+                "status": "next"
+            },
+            {
+                "id": 10,
+                "task": "Identify high-priority stakeholders",
+                "status": "upcoming"
+            },
+            {
+                "id": 11,
+                "task": "Draft tailored messaging and communication strategies for each stakeholder group",
+                "status": "upcoming"
+            },
+            {
+                "id": 12,
+                "task": "Schedule initial meetings or calls with prioritized stakeholders",
+                "status": "upcoming"
+            },
+            {
+                "id": 13,
+                "task": "Regularly update and refine the stakeholder engagement plan",
+                "status": "other"
+            },
+            {
+                "id": 14,
+                "task": "Monitor the effectiveness of communication strategies",
+                "status": "other"
+            },
+            {
+                "id": 15,
+                "task": "Establish a system for tracking and managing stakeholder relationships",
+                "status": "other"
+            },
+            {
+                "id": 16,
+                "task": "Proactively seek out new partnership opportunities",
+                "status": "other"
+            }
+        ]
+    }
+}

@@ -21,9 +21,16 @@ zulip = "^0.8.2"
 llama-index = "^0.4.24"
 argparse = "^1.4.0"
 discord = "^2.2.2"
+pygithub = "^1.58.1"
+torch = "^2.0.0"
+sentencepiece = "^0.1.97"
+langchain = "^0.0.126"
 
 [tool.poetry.scripts]
 agent = "agent.main:run"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
 
 [build-system]
 requires = ["poetry-core"]

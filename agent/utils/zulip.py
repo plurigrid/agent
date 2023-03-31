@@ -87,19 +87,30 @@ class ZulipUUID:
         return user_slug
 
 
+import configparser
+
+
 class ZulipClient:
-    def __init__(self, config, msg_handler):
-        bot_key = os.getenv("ZULIP_API_KEY")
-        bot_email = config.zulip["BOT_EMAIL"]
-        server_url = config.zulip["SERVER_URL"]
+    def __init__(self, msg_handler):
+        config_path = os.path.expanduser("~/.zuliprc")
+        if not os.path.exists(config_path):
+            raise ValueError(f"Configuration file not found at: {config_path}")
+
+        config = configparser.ConfigParser()
+        config.read(config_path)
+
+        bot_key = config.get("api", "key", fallback=None)
+        bot_email = config.get("api", "email", fallback=None)
+        server_url = config.get("api", "site", fallback=None)
+
         if bot_email is None:
             raise ValueError("BOT_EMAIL config variable not set.")
         if server_url is None:
             raise ValueError("SERVER_URL config variable not set.")
         if bot_key is None:
             raise ValueError("ZULIP_API_KEY environment variable not set.")
+
         self.client = zulip.Client(api_key=bot_key, email=bot_email, site=server_url)
-        self.config = config
         self.msg_handler = msg_handler
 
     def run(self):
@@ -122,23 +133,6 @@ class ZulipClient:
         topic = msg["subject"]
         output = msg_handler(msg["content"])
         self.send_message("stream", stream, topic, output)
-
-    def upload_image(self, stream, topic, image):
-        image.save("tmp", "PNG")
-        with open("./tmp", "rb") as fp:
-            result = self.client.upload_file(fp)
-            print(result)
-            result = self.client.send_message(
-                {
-                    "type": "stream",
-                    "to": f"{stream}",
-                    "topic": f"{topic}",
-                    "content": "Check out [your generated color]({}{})!".format(
-                        self.config.ZULIP_BASE_URL, result["uri"]
-                    ),
-                }
-            )
-            print(result)
 
     def send_stream_message(self, stream, topic, content):
         return self.send_message("stream", stream, topic, content)

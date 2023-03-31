@@ -12,3 +12,6 @@ class Config:
         with open(config_file) as f:
             config_data = json.load(f)
         self.__dict__ = config_data
+
+    def set(self, key, value):
+        self.__dict__[key] = value

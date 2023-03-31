@@ -1,6 +1,5 @@
 # Agent
 
-The Agent is a conversational assistant designed to help team members in organizations establish a shared information context and work more efficiently together. The agent is built using Python and langchain.
 
 ## Setup and Installation
 
@@ -15,27 +14,23 @@ nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 ```
 
-## Running the agent with zulip
+## Running with 'just'
 
-1. Run `nix-shell` from the directory where `shell.nix` exists (ie the root of this repo), and you should be dropped into a new shell environment with the necessary dependencies installed.
+1. If it's the first time running after pulling changes, run "just install" to install all dependencies.
+2. Set the OPENAI_API_KEY environment variable in your shell.
+3. Run `just shell` to run the nix and poetry shells.
+4. For the play-coplay agent, run `just play {gradio, repl, zulip, discord}`. Default mode if you don't provide one will create a link to a gradio UI.
+5. To summon a twin with a prompt, run `just summon <prompt-file-path> {gradio, repl, zulip, discord}`.
+6. To start an ontology agent, run `just ontology <path-to-knowledge-base> {gradio, repl, zulip, discord}`. This will allow you to ask questions over the knowledge base you provide. Protip: make sure the knowledge base does not have nested directories. scripts/copy_files_flat.sh can help with this.
 
-2. Run `poetry install` to install the python dependencies from pyproject.toml. This will create a virtual environment and install the necessary python dependencies within.
+## Extra configuration for running in zulip or discord
 
-3. Run `poetry shell`. This will run the virtual environment that was created in the previous step.
+1. The agent_config.json file in this directory is a sample configuration file. Copy it to ~/agent_config.json.
 
-4. Set the OPENAI_API_KEY environment variable in your shell.
+2. DISCORD: If you want to the agent's index to be constructed from channels on a discord server, add the relevant discord channel IDs to the `CHANNEL_IDS` variable in agent_config.json. Make sure you set the INDEX_MODE variable to either "discord" or "directory". In order for the channels to be read, you need to set the `DISCORD_TOKEN` environment variable to your discord bot's API key. If you're otherwise running as a discord bot, you also need to set the `DISCORD_TOKEN` environment variable to your bot's API key.
 
-5. The agent_config.json file is a sample configuration file. Copy it to ~/agent_config.json (aka, your home directory) and set the DATA_DIR variable in that file to the absolute path of the directory of files that you want to input to the agent. This should be a directory containing any notes or thoughts you have about Plurigrid. Don't include any nested directories, all files should be at the top level.
+3. ZULIP: If running a zulip agent, you will also need a zulip config file. Go to Zulip and navigate to 'Settings' --> 'Personal Settings' --> 'Bots'. Download the .zuliprc file and copy it to ~/.zuliprc.
 
-5.5. If you instead want to the agent's index to be constructed from channels on a discord server, add the relevant discord channel IDs to the `CHANNEL_IDS` variable in agent_config.json. Make sure you set the INDEX_MODE variable to either "discord" or "directory". In order for the channels to be read, you need to set the `DISCORD_TOKEN` environment variable to your discord bot's API key.
-
-6. If running a zulip bot, you will also need a zulip bot API key. You already have a bot created for you, so go to Zulip and navigate to 'Settings' --> 'Personal Settings' --> 'Bots'. Download the zuliprc file. Copy the api key and use it to set the `ZULIP_BOT_KEY` environment variable in your shell. Then, in ~/agent_config.json, set the BOT_EMAIL variable to your bot's email address. Set the SERVER_URL variable to the zulip server url. (Sorry, I know this is annoying, but trying to separate API keys from other text configurations.)
-
-6.5. If running a discord bot, you will need to set the `DISCORD_TOKEN` environment variable to your bot's API key.
-
-7. Run your agent and indicate which bot type you want: `python3 agent/agents/digital_twin.py --bot-type {discord, zulip}`. Make sure you run this command from the root of the repo.
-
-8. If all has gone well, you can now interact with your bot by tagging it and asking it questions.
 
 ## Tips
 
