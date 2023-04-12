@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from agent.utils import gradio, repl, zulip
+from agent.utils import fastapi, gradio, repl, zulip
 from agent.utils import discord
 
 
@@ -14,6 +14,9 @@ class BaseAgent(ABC):
             self.client = repl.Repl(self.handle_input)
         elif mode == "gradio":
             self.client = gradio.Gradio(self.handle_input)
+        elif mode == "fastapi":
+            fastapi.app_state = fastapi.AppState(chain_handler=self.get_chain)
+            fastapi.run()
         else:
             raise ValueError("Invalid agent mode")
 
@@ -23,4 +26,9 @@ class BaseAgent(ABC):
     ## Returns LLM output given an input message
     @abstractmethod
     def handle_input(self, msg):
+        pass
+
+    ## Returns LLM Chain
+    @abstractmethod
+    def get_chain(self, msg):
         pass
